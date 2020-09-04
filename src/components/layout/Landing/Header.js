@@ -1,93 +1,45 @@
-import React from 'react';
-import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import hiverLogo from '../../../asset/images/hiver-logo.png';
-import { Button } from '@material-ui/core';
+import React from "react";
+import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
+import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import hiverLogo from "../../../asset/images/hiver-logo.png";
+import { Button } from "@material-ui/core";
 
 const Header = () => {
   return (
-    <div class='d-flex justify-content-around'>
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-
-          justifyContent: 'flex-end'
-        }}
-      >
-        <img style={{ width: '130px', height: '84px' }} src={hiverLogo} />
+    <div class="d-flex justify-content-around">
+      <div className="div-main">
+        <img style={{ width: "130px", height: "84px" }} src={hiverLogo} />
       </div>
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center'
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginRight: '8px'
-          }}
-        >
+      <div className="div-right">
+        <div className="div-encounter">
           <FavoriteBorderOutlinedIcon
-            style={{ color: '#fff' }}
-            fontSize={'large'}
+            style={{ color: "#fff" }}
+            fontSize={"large"}
           />
           <p
             style={{
-              margin: '2px',
-              color: 'white'
-
-              // fontSize: '20px'
+              margin: "2px",
+              color: "white",
             }}
           >
             Encounter
           </p>
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginRight: '15px'
-          }}
-        >
+        <div className="div-nearby">
           <LocationOnOutlinedIcon
-            style={{ color: '#fff' }}
-            fontSize={'large'}
+            style={{ color: "#fff" }}
+            fontSize={"large"}
           />
           <p
             style={{
-              margin: '2px',
-              color: 'white'
-
-              // fontSize: '20px'
+              margin: "2px",
+              color: "white",
             }}
           >
             People nearby
           </p>
         </div>
-        <Button
-          variant='outlined'
-          size='small'
-          style={{
-            color: '#fff',
-            borderColor: '#fff',
-            height: '40px',
-            width: '100px',
-            alignSelf: 'center',
-            textTransform: 'none',
-            fontSize: 17
-          }}
-        >
+        <Button variant="outlined" size="small" className="button-signin">
           Sign In
         </Button>
       </div>

@@ -81,3 +81,41 @@ Button.btn-malefemale {
   margin-top: 20px;
   color: #7348ef;
 }
+
+Button.button-signin {
+  color: #fff;
+  border-color: #fff;
+  height: 40px;
+  width: 100px;
+  align-self: center;
+  text-transform: none;
+  font-size: 17px;
+}
+
+.div-nearby {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+.div-encounter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.div-right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.div-main {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
