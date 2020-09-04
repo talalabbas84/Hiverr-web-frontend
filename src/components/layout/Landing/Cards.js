@@ -34,27 +34,31 @@ const Cards = () => {
 
   return (
     <div
-      style={{
-        display: "flex",
-        alignSelf: "center",
-        // backgroundColor: 'red',
-        width: "60%",
-        marginTop: "-150px",
-      }}
+      className="card-wrapper"
+      // style={{
+      //   display: "flex",
+      //   alignSelf: "center",
+      //   width: "60%",
+      //   marginTop: "-150px",
+      // }}
     >
-      <Card className={classes.root}>
+      <Card
+        // className="root-card"
+        id="test-card"
+        // className={classes.root}
+      >
         <CardContent
-          style={{
-            display: "flex",
-            flex: 1,
-            backgroundColor: "#ffffff",
-
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            paddingBottom: 100,
-            paddingTop: 100,
-          }}
+          className="card-content1"
+          // style={{
+          //   display: "flex",
+          //   flex: 1,
+          //   backgroundColor: "#ffffff",
+          //   alignItems: "center",
+          //   justifyContent: "center",
+          //   flexDirection: "column",
+          //   paddingBottom: 100,
+          //   paddingTop: 100,
+          // }}
         >
           <Typography variant="h3">12,154</Typography>
           <Typography
@@ -66,34 +70,38 @@ const Cards = () => {
           <Button
             variant="contained"
             color="primary"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              backgroundColor: "#7348EF",
-              textTransform: "none",
-              marginTop: "20px",
-            }}
+            className="sign-fb-btn"
+            // style={{
+            //   display: "flex",
+            //   flexDirection: "row",
+            //   backgroundColor: "#7348EF",
+            //   textTransform: "none",
+            //   marginTop: "20px",
+            // }}
           >
             <FacebookIcon style={{ marginRight: 10 }} /> Sign in via Facebook
           </Button>
           <Typography
             variant="caption"
-            style={{ width: 200, textAlign: "center", marginTop: "20px" }}
+            // className="text-youre"
+            id="text-youre"
+            // style={{ width: 200, textAlign: "center", marginTop: "20px" }}
           >
             We never post on your behalf
           </Typography>
         </CardContent>
         <CardContent
-          style={{
-            display: "flex",
-            flex: 1,
-            backgroundColor: "#F6F6F6",
+          className="card-content2"
+          // style={{
+          //   display: "flex",
+          //   flex: 1,
+          //   backgroundColor: "#F6F6F6",
 
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            borderRadius: "30px",
-          }}
+          //   alignItems: "center",
+          //   justifyContent: "center",
+          //   flexDirection: "column",
+          //   borderRadius: "30px",
+          // }}
         >
           <Typography
             variant="h6"
@@ -103,33 +111,35 @@ const Cards = () => {
           </Typography>
           <Typography
             variant="body1"
-            style={{ width: 200, textAlign: "center", marginTop: "20px" }}
+            // className="text-youre"
+            id="text-youre"
+            // style={{ width: 200, textAlign: "center", marginTop: "20px" }}
           >
             You're
           </Typography>
           <Button
             variant="contained"
-            //color='#ffffff'
-
-            style={{
-              textTransform: "none",
-              width: "80%",
-              marginTop: "20px",
-              borderRadius: "7px",
-              backgroundColor: "#ffffff",
-            }}
+            className="btn-malefemale"
+            // style={{
+            //   textTransform: "none",
+            //   width: "80%",
+            //   marginTop: "20px",
+            //   borderRadius: "7px",
+            //   backgroundColor: "#ffffff",
+            // }}
           >
             Male
           </Button>
           <Button
             variant="contained"
-            style={{
-              textTransform: "none",
-              width: "80%",
-              marginTop: "20px",
-              borderRadius: "7px",
-              backgroundColor: "#ffffff",
-            }}
+            className="btn-malefemale"
+            // style={{
+            //   textTransform: "none",
+            //   width: "80%",
+            //   marginTop: "20px",
+            //   borderRadius: "7px",
+            //   backgroundColor: "#ffffff",
+            // }}
           >
             Female
           </Button>
