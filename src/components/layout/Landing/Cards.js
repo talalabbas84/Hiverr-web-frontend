@@ -1,135 +1,68 @@
-import React from 'react';
-import { Card, Button } from '@material-ui/core';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import FacebookIcon from '@material-ui/icons/Facebook';
+import React from "react";
+import { Card, Button } from "@material-ui/core";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import FacebookIcon from "@material-ui/icons/Facebook";
 
 const useStyles = makeStyles({
   root: {
-    width: '70%',
-    marginLeft: '25%',
-    marginTop: '260px',
-    display: 'flex',
-    alignSelf: 'center',
-    borderRadius: '30px'
+    width: "70%",
+    marginLeft: "25%",
+    marginTop: "260px",
+    display: "flex",
+    alignSelf: "center",
+    borderRadius: "30px",
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)'
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14
+    fontSize: 14,
   },
   pos: {
-    marginBottom: 12
-  }
+    marginBottom: 12,
+  },
 });
 
 const Cards = () => {
   const classes = useStyles();
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignSelf: 'center',
-        // backgroundColor: 'red',
-        width: '60%',
-        marginTop: '-150px'
-      }}
-    >
+    <div className="card-wrapper">
       <Card className={classes.root}>
-        <CardContent
-          style={{
-            display: 'flex',
-            flex: 1,
-            backgroundColor: '#ffffff',
-
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            paddingBottom: 100,
-            paddingTop: 100
-          }}
-        >
-          <Typography variant='h3'>12,154</Typography>
+        <CardContent className="card-content1">
+          <Typography variant="h3">12,154</Typography>
           <Typography
-            variant='body1'
-            style={{ width: 200, textAlign: 'center', marginTop: '60px' }}
+            variant="body1"
+            style={{ width: 200, textAlign: "center", marginTop: "60px" }}
           >
             People have already joined, jump in !
           </Typography>
-          <Button
-            variant='contained'
-            color='primary'
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              backgroundColor: '#7348EF',
-              textTransform: 'none',
-              marginTop: '20px'
-            }}
-          >
+          <Button variant="contained" color="primary" className="sign-fb-btn">
             <FacebookIcon style={{ marginRight: 10 }} /> Sign in via Facebook
           </Button>
-          <Typography
-            variant='caption'
-            style={{ width: 200, textAlign: 'center', marginTop: '20px' }}
-          >
+          <Typography variant="caption" className="text-youre">
             We never post on your behalf
           </Typography>
         </CardContent>
-        <CardContent
-          style={{
-            display: 'flex',
-            flex: 1,
-            backgroundColor: '#F6F6F6',
-
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            borderRadius: '30px'
-          }}
-        >
+        <CardContent className="card-content2">
           <Typography
-            variant='h6'
-            style={{ width: 200, textAlign: 'center', marginTop: '40px' }}
+            variant="h6"
+            style={{ width: 200, textAlign: "center", marginTop: "40px" }}
           >
             Sign up by answering a few questions:
           </Typography>
-          <Typography
-            variant='body1'
-            style={{ width: 200, textAlign: 'center', marginTop: '20px' }}
-          >
+          <Typography variant="body1" className="text-youre">
             You're
           </Typography>
-          <Button
-            variant='contained'
-            //color='#ffffff'
-
-            style={{
-              textTransform: 'none',
-              width: '80%',
-              marginTop: '20px',
-              borderRadius: '7px',
-              backgroundColor: '#ffffff'
-            }}
-          >
+          <Button variant="contained" className="btn-malefemale">
             Male
           </Button>
-          <Button
-            variant='contained'
-            style={{
-              textTransform: 'none',
-              width: '80%',
-              marginTop: '20px',
-              borderRadius: '7px',
-              backgroundColor: '#ffffff'
-            }}
-          >
+          <Button variant="contained" className="btn-malefemale">
             Female
           </Button>
         </CardContent>

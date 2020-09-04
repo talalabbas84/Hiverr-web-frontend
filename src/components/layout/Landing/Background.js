@@ -1,35 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import './index.css';
-import Header from './Header';
-import Card from './Cards';
+import "./index.css";
+import Header from "./Header";
+import Card from "./Cards";
 
-import HiverIphone from '../../../asset/images/hiver-iphone.png';
+import HiverIphone from "../../../asset/images/hiver-iphone.png";
 
 const Background = () => {
   return (
-    <div className='background-image .img-fluid. max-width: 100% '>
+    <div className="background-image .img-fluid. max-width: 100% ">
       <Header />
-      <div
-        className='main-wrapper'
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          // backgroundColor: 'pink',
-          //alignItems: 'flex-start'
-          justifyContent: 'flex-start',
-          marginTop: 40
-        }}
-      >
+      <div className="main-wrapper">
         <Card />
-        <div
-          style={{
-            width: '40%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
+        <div className="div-phone-img">
           <img src={HiverIphone} style={{ width: 400, marginTop: 100 }} />
         </div>
       </div>
