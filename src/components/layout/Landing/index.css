@@ -23,6 +23,15 @@
   justify-content: center;
 }
 
+.card-root {
+  width: 70%;
+  margin-left: 50%;
+  margin-top: 260px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  border-radius: 100px;
+}
 .card-wrapper {
   display: "flex";
   align-self: center;
