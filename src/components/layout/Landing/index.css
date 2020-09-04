@@ -121,7 +121,7 @@ Button.button-signin {
   justify-content: flex-end;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .background-image {
     background: url('../../../asset/images/background-image.png') repeat;
     background-size: 100%;
