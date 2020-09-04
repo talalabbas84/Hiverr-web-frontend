@@ -1,0 +1,10 @@
+.background-image {
+  background: url('../../../asset/images/background-image.png') no-repeat center
+    center fixed;
+  background-size: 100%;
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
