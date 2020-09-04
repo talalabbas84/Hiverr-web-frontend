@@ -8,3 +8,10 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 40;
+}

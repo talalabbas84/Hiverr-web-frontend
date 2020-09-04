@@ -11,6 +11,7 @@ const Background = () => {
     <div className='background-image .img-fluid. max-width: 100% '>
       <Header />
       <div
+        className='main-wrapper'
         style={{
           display: 'flex',
           flexDirection: 'row',
