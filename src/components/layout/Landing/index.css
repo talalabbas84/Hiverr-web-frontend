@@ -121,10 +121,11 @@ Button.button-signin {
   justify-content: flex-end;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 468px) {
   .background-image {
     background: url('../../../asset/images/background-image.png');
     background-size: 100%;
+    width: 530px;
     height: 100vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
