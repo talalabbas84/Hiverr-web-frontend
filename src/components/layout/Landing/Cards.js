@@ -34,14 +34,13 @@ const Cards = () => {
 
   return (
     <div
-      className="card-wrapper"
-      // style={{
-      //   display: "flex",
-      //   alignSelf: "center",
-      //   // backgroundColor: 'red',
-      //   width: "60%",
-      //   marginTop: "-150px",
-      // }}
+      style={{
+        display: "flex",
+        alignSelf: "center",
+        // backgroundColor: 'red',
+        width: "60%",
+        marginTop: "-150px",
+      }}
     >
       <Card className={classes.root}>
         <CardContent
