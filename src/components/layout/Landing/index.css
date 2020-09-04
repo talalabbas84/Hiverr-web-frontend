@@ -125,11 +125,9 @@ Button.button-signin {
   .background-image {
     background: url('../../../asset/images/background-image.png') repeat;
     background-size: 100%;
-    width: 100%;
+    width: 160%;
     height: auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+
     background-size: cover;
   }
   .div-phone-img {
