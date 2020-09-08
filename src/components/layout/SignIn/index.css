@@ -64,11 +64,18 @@
 .checkbox-css {
   margin-top: 10px;
 }
+.main-container {
+  padding: 7%;
+}
 
 @media screen and (max-width: 768px) {
   .para-media {
     margin-left: 2%;
     margin-right: 2%;
     text-align: center;
+  }
+  .heading {
+    color: white;
+    padding-top: 5px;
   }
 }

@@ -7,7 +7,7 @@ import { Input } from 'antd';
 const SignInComponent = () => {
   return (
     <Fragment>
-      <Grid container>
+      <Grid className='main-container' container>
         <Grid
           alignItems='center'
           container
