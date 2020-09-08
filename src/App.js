@@ -12,9 +12,14 @@ import SignIn from './components/layout/SignIn/SignIn';
 
 const App = () => {
   return (
-    <Fragment>
-      <Landing />
-    </Fragment>
+    <Router>
+      <Fragment>
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/login' component={SignIn} />
+        </Switch>
+      </Fragment>
+    </Router>
   );
 };
 

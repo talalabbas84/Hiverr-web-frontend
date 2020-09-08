@@ -1,0 +1,74 @@
+.section-css {
+  background-color: black;
+  height: 100vh;
+}
+
+.heading {
+  color: white;
+  padding-top: 80px;
+}
+
+.para {
+  color: white;
+}
+.underlined-para {
+  color: white;
+  text-decoration: underline;
+}
+.underlined-para-theme {
+  color: #6e48db;
+  text-decoration: underline;
+}
+
+.form-css {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #6e48db !important;
+}
+.btn-default:not([disabled]):not(.disabled):active {
+  color: #fff;
+  background-color: #6e48db !important;
+}
+
+.margin-css {
+  margin-top: 30px;
+}
+
+.btn-sign-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  /* align-items: center; */
+  /* background-color: red; */
+  align-content: center;
+  margin-top: 15px;
+}
+
+.fb-btn {
+  text-transform: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-content: center; */
+}
+
+.mr-2 {
+  text-transform: none;
+}
+
+.checkbox-css {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .para-media {
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+  }
+}

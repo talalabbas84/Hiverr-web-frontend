@@ -1,0 +1,11 @@
+.navbar {
+  background-color: #6e48db !important;
+  display: flex;
+  padding-left: 45%;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding-left: 35%;
+  }
+}
