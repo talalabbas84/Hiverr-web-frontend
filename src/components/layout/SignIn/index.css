@@ -1,11 +1,11 @@
 .section-css {
-  background-color: black;
+  background-color: #211c1c;
   height: 100vh;
 }
 
 .heading {
   color: white;
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 .para {
@@ -65,7 +65,7 @@
   margin-top: 10px;
 }
 .main-container {
-  padding: 7%;
+  padding: 4%;
 }
 
 @media screen and (max-width: 768px) {

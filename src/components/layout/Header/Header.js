@@ -44,7 +44,7 @@ const Headerr = () => {
             </MDBNavItem>
             <MDBNavItem active>
               <MDBBtn size='sm' outline color='white'>
-                Join Hiverr
+                Join Hivrr
               </MDBBtn>
             </MDBNavItem>
           </MDBNavbarNav>

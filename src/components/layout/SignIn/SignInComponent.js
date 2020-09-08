@@ -19,7 +19,7 @@ const SignInComponent = () => {
           md={12}
           sm={12}
         >
-          <h1 className='heading'>Sign In to Hiverr</h1>
+          <h1 className='heading'>Sign In to Hivrr</h1>
         </Grid>
         <Grid
           item

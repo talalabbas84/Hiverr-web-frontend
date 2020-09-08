@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import hiverLogo from '../../../asset/images/hiver-logo.png';
 import { Button } from '@material-ui/core';
 
-const Header = () => {
+const Header = props => {
+  const history = useHistory();
+  const signInHandler = () => {
+    props.history.push('/login');
+  };
   return (
     <div class='d-flex justify-content-around div-main-main-wrapper'>
       <div className='div-main'>
@@ -39,8 +44,20 @@ const Header = () => {
             People nearby
           </p>
         </div>
-        <Button variant='outlined' size='small' className='button-signin'>
+        <Button
+          variant='outlined'
+          size='small'
+          style={{ color: 'white' }}
+          className='button-signin'
+          onClick={() => history.push('/login')}
+        >
+          {/* <Link
+            to='/login'
+            style={{ color: 'white' }}
+            className='button-signin'
+          > */}
           Sign In
+          {/* </Link> */}
         </Button>
       </div>
     </div>
