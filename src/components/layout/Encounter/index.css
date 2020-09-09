@@ -1,0 +1,51 @@
+#components-layout-demo-side .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+  /* margin-top: -50px; */
+}
+.site-layout {
+  margin-top: -50px;
+}
+.site-layout3 {
+  margin-top: -50px;
+  background-color: #575757;
+}
+.logo-Hivrr {
+  width: 200px;
+  height: 80px;
+  object-fit: contain;
+}
+.carousel-css {
+  background-color: red;
+  width: 100%;
+  height: 100vh;
+}
+.img-swiper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* margin-bottom: -50px; */
+}
+.div-right-side {
+  display: flex;
+  flex: 0.5;
+  background-color: #575757;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20;
+  padding-top: 150px;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-direction: column;
+}
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  object-fit: cover;
+  margin-right: 7px;
+}
