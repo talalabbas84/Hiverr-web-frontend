@@ -10,6 +10,7 @@ import SignIn from './components/layout/SignIn/SignIn';
 
 import { Navbar } from './components/layout/Navbar';
 import Encounter from './components/layout/Encounter';
+import SignUp from './components/layout/SignUp/SignUp';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route exact path='/' component={Landing} />
           <Route exact path='/login' component={SignIn} />
           <Route exact path='/dashboard' component={Encounter} />
+          <Route exact path='/signup' component={SignUp} />
         </Switch>
       </Router>
     </Fragment>

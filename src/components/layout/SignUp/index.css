@@ -1,0 +1,49 @@
+.section-css {
+  background-color: #211c1c;
+  height: 100vh;
+}
+
+.ant-picker-input {
+  color: blue !important;
+}
+
+.ant-picker-input input::placeholder {
+  color: gray;
+  /* border-radius: 10px !important; */
+}
+
+.mr-2 {
+  text-transform: none;
+}
+
+.ant-picker {
+  border-radius: 4px !important;
+}
+
+.btn-signup {
+  width: 300px;
+}
+
+.btn-signup-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.agreement-css {
+  display: flex;
+  width: 300px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    color: white;
+    padding-top: 0px;
+    display: 'flex';
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 35px;
+  }
+}
