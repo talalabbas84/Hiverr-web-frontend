@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 import {
   MDBNavbar,
@@ -17,11 +18,12 @@ import {
 } from 'mdbreact';
 import hiverLogo from '../../../asset/images/hiver-logo.png';
 
-const Headerr = () => {
+const Headerr = props => {
   const [isOpen, setisOpen] = useState(false);
   const toggleCollapse = e => {
     setisOpen(!isOpen);
   };
+
   return (
     <Fragment>
       <MDBNavbar dark expand='md'>
@@ -32,20 +34,24 @@ const Headerr = () => {
         <MDBCollapse id='navbarCollapse3' isOpen={isOpen} navbar>
           <MDBNavbarNav left className='mx-auto'>
             <MDBNavItem active>
-              <p
-                style={{
-                  color: 'white',
-                  marginTop: '12px',
-                  marginRight: '20px'
-                }}
-              >
-                Already a member?
-              </p>
+              <Link to='/login'>
+                <p
+                  style={{
+                    color: 'white',
+                    marginTop: '12px',
+                    marginRight: '20px'
+                  }}
+                >
+                  Already a member?
+                </p>
+              </Link>
             </MDBNavItem>
             <MDBNavItem active>
-              <MDBBtn size='sm' outline color='white'>
-                Join Hivrr
-              </MDBBtn>
+              <Link to='/signup'>
+                <MDBBtn size='sm' outline color='white'>
+                  Join Hivrr
+                </MDBBtn>
+              </Link>
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>

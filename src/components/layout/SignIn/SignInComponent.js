@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+import { Link } from 'react-router-dom';
 import { Paper, Grid } from '@material-ui/core';
 import { MDBBtn, MDBIcon } from 'mdbreact';
 import { Input } from 'antd';
@@ -86,9 +86,11 @@ const SignInComponent = () => {
               </div>
             </div>
             <div className='btn-sign-in'>
-              <MDBBtn className='mr-2' rounded>
-                Sign me in!
-              </MDBBtn>
+              <Link to='/dashboard'>
+                <MDBBtn className='mr-2' rounded>
+                  Sign me in!
+                </MDBBtn>
+              </Link>
             </div>
             <div className='btn-sign-in'>
               <label

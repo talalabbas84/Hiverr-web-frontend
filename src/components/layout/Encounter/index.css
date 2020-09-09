@@ -16,7 +16,7 @@
   background-color: #575757;
 }
 .logo-Hivrr {
-  width: 200px;
+  /* width: 200px; */
   height: 80px;
   object-fit: contain;
 }
@@ -36,8 +36,8 @@
   flex: 0.5;
   background-color: #575757;
   border-top-right-radius: 20px;
-  border-bottom-right-radius: 20;
-  padding-top: 150px;
+  border-bottom-right-radius: 20px;
+  /* padding-top: 150px; */
   padding-left: 5%;
   padding-right: 5%;
   flex-direction: column;
@@ -48,4 +48,112 @@
   border-radius: 26px;
   object-fit: cover;
   margin-right: 7px;
+}
+.div-line {
+  /* width: 170px; */
+  height: 1px;
+  background-color: #707070;
+  /* margin-left: 10px; */
+}
+.coin-div {
+  background-color: rgba(115, 72, 239, 0.9);
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-coin {
+  color: #1e89e6;
+  border-width: 0;
+  background-color: rgba(115, 72, 239, 0);
+  padding-left: 0px;
+  font-size: 10px;
+  height: 16px;
+  margin-top: -5px;
+}
+.btn-inc-pop {
+  background-color: #6e48db;
+  width: 80%;
+  height: 35px;
+  border-radius: 13px;
+  border-width: 0px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.div-avatar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.div-swiper-content {
+  display: flex;
+  flex: 1;
+  background-color: #fff;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+}
+.div-content {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.div-carousel {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  /* margin-top: -82px; */
+}
+.layout-css {
+  min-height: 100vh;
+  background-color: #211c1e;
+  /* display: flex;
+  flex-direction: column; */
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
+}
+.div-main {
+  background-color: #211c1e;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: #211c1e;
+  padding-bottom: 50px;
+}
+.div-coin-diamond {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .div-main {
+    background-color: #211c1e;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #211c1e;
+    padding-bottom: 0px;
+  }
+  .div-swiper-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .div-right-side {
+    padding-top: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .div-carousel {
+    margin-top: -82px;
+  }
+  /* .div-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  } */
 }
