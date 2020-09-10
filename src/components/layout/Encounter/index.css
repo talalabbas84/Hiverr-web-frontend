@@ -37,7 +37,7 @@
   background-color: #575757;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  /* padding-top: 150px; */
+  padding-top: 150px;
   padding-left: 5%;
   padding-right: 5%;
   flex-direction: column;
@@ -112,17 +112,14 @@
 .layout-css {
   min-height: 100vh;
   background-color: #211c1e;
-  /* display: flex;
-  flex-direction: column; */
-  /* border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px; */
 }
 .div-main {
   background-color: #211c1e;
   padding-left: 20%;
   padding-right: 20%;
-  background-color: #211c1e;
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 .div-coin-diamond {
   display: flex;
@@ -132,10 +129,8 @@
 
 @media screen and (max-width: 768px) {
   .div-main {
-    background-color: #211c1e;
     padding-left: 2%;
     padding-right: 2%;
-    background-color: #211c1e;
     padding-bottom: 0px;
   }
   .div-swiper-content {
@@ -151,9 +146,4 @@
   .div-carousel {
     margin-top: -82px;
   }
-  /* .div-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  } */
 }
