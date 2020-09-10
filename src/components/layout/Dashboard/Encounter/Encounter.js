@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import 'antd/dist/antd.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const Encounter = () => {
