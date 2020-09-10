@@ -1,6 +1,6 @@
 .section-css {
   background-color: #211c1c;
-  height: 100vh;
+  height: 100%;
 }
 
 .ant-picker-input {
@@ -48,6 +48,6 @@
   }
   .section-css {
     background-color: #211c1c;
-    height: 150vh;
+    height: 100%;
   }
 }
