@@ -86,7 +86,7 @@ const SignInComponent = () => {
               </div>
             </div>
             <div className='btn-sign-in'>
-              <Link to='/dashboard'>
+              <Link to='/encounter'>
                 <MDBBtn className='mr-2' rounded>
                   Sign me in!
                 </MDBBtn>

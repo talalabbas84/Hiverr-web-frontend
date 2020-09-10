@@ -4,6 +4,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import { Provider } from 'react-redux';
+import store from './store';
 import './App.css';
 
 import Landing from './components/layout/Landing/Landing';
@@ -11,9 +12,10 @@ import SignIn from './components/layout/SignIn/SignIn';
 
 import { Navbar } from './components/layout/Navbar';
 // import Encounter from './components/layout/Encounter';
-import Dashboard from './components/layout/Dashboard/Dashboard';
+// import Dashboard from './components/layout/Dashboard/Dashboard';
+import Encounter from './components/layout/Dashboard/Encounter/Encounter';
 import SignUp from './components/layout/SignUp/SignUp';
-import store from './store';
+import PeopleNearby from './components/layout/Dashboard/PeopleNearby/PeopleNearby';
 import { loadUser } from './actions/auth';
 
 const App = () => {
@@ -27,7 +29,8 @@ const App = () => {
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/login' component={SignIn} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/encounter' component={Encounter} />
+            <Route exact path='/people-nearby' component={PeopleNearby} />
             <Route exact path='/signup' component={SignUp} />
           </Switch>
         </Router>

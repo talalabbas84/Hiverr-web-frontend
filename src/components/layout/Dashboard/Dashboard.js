@@ -6,12 +6,11 @@ import LeftSideBar from './LeftSideBar';
 import Encounter from './Encounter/Encounter';
 import HivrrLogoText from '../../../asset/images/HivrrLogoText.png';
 
-const Dashboard = () => {
+const Dashboard = ({ children }) => {
   const [collapsed, setcollapsed] = useState(true);
 
   const setCollapsedHandler = collapsed => {
     setcollapsed(!collapsed);
-    console.log(collapsed);
   };
 
   return (
@@ -37,7 +36,8 @@ const Dashboard = () => {
           collapsed={collapsed}
           setCollapsedHandler={setCollapsedHandler}
         />
-        <Encounter />
+
+        {children}
       </Layout>
     </div>
   );
