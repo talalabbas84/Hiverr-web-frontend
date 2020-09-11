@@ -16,6 +16,8 @@ import { Navbar } from './components/layout/Navbar';
 import Encounter from './components/layout/Dashboard/Encounter/Encounter';
 import SignUp from './components/layout/SignUp/SignUp';
 import PeopleNearby from './components/layout/Dashboard/PeopleNearby/PeopleNearby';
+import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
+import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
 import { loadUser } from './actions/auth';
 
 const App = () => {
@@ -32,6 +34,16 @@ const App = () => {
             <Route exact path='/encounter' component={Encounter} />
             <Route exact path='/people-nearby' component={PeopleNearby} />
             <Route exact path='/signup' component={SignUp} />
+            <Route
+              exact
+              path='/single-photo-upload'
+              component={SinglePhotoUpload}
+            />
+            <Route
+              exact
+              path='/email-verification'
+              component={EmailVerification}
+            />
           </Switch>
         </Router>
       </Fragment>

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -184,9 +185,11 @@ const SignUpComponent = props => {
             </div>
 
             <div className='margin-css btn-signup-main'>
-              <MDBBtn social='fb' className='mr-2  btn-signup'>
-                Sign me Up
-              </MDBBtn>
+              <Link to='/email-verification'>
+                <MDBBtn social='fb' className='mr-2  btn-signup'>
+                  Sign me Up
+                </MDBBtn>
+              </Link>
             </div>
             <div className='agreement-css '>
               <label style={{ color: 'white' }}>

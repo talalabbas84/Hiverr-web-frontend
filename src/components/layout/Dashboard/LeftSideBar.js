@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu } from 'antd';
@@ -15,6 +16,7 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
     setCollapsedHandler(collapsed);
     // alert("This is collapse");
   };
+  const MenuItemHandler = () => {};
   return (
     <Sider
       style={{ backgroundColor: '#211C1E' }}
@@ -78,10 +80,15 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
           </div>
         </div>
         <Menu.Item style={{ margin: 0 }} key='1'>
-          Encounters
+          <NavLink to='encounter'>Encounters</NavLink>
         </Menu.Item>
-        <Menu.Item style={{ margin: 0 }} key='2'>
-          People nearby
+        <Menu.Item
+          active
+          style={{ margin: 0 }}
+          key='2'
+          onClick={MenuItemHandler}
+        >
+          <NavLink to='people-nearby'>People nearby</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='3'>
           Messages
