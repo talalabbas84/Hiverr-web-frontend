@@ -111,12 +111,15 @@ Button.button-signin {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  /* background-color: red; */
 }
 
 .div-main {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  /* background-color: yellow; */
+  align-items: flex-end;
 }
 
 .mob-img {
@@ -192,6 +195,10 @@ Button.button-signin {
     flex: 1;
     width: 100%;
     justify-content: center;
+    align-items: center;
+    /* background-color: red !important;
+    align-self: flex-end !important;
+    align-items: center; */
   }
   .div-main-main-wrapper {
     display: flex;
