@@ -1,129 +1,30 @@
-.main-card {
-  max-height: 100vh;
-  overflow: scroll !important;
-  background-color: #575757 !important;
-  overflow: hidden;
-  /* width: 800px; */
-}
-
-.main-card::-webkit-scrollbar {
-  width: 20px;
-}
-
-/* Track */
-.main-card::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle */
-.main-card::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-.main-card::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
-}
 .div-main-cont {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  background-color: #575757;
-}
-
-#container {
-  height: 400px;
-  width: 400px;
-  position: relative;
-}
-#image {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-#text {
-  z-index: 100;
-  position: absolute;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  left: 150px;
-  top: 350px;
-}
-.div-main-cont {
-  /* width: 400%; */
+  width: 1000px;
   /* width: 100% !important; */
   display: flex;
   flex: 1;
   flex-direction: column;
   background-color: #575757;
 }
-.avatar {
-  width: 52px;
-  height: 52px;
-  border-radius: 26px;
-  object-fit: cover;
-  margin-right: 7px;
+
+.image-main-col {
+  margin-top: 30px;
+  border-radius: 100px !important;
 }
-.div-chatuser {
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  padding: 5px;
-  height: 60px;
-  background-color: pink;
+
+.image-sub-col {
+  border-radius: 20px !important;
+  height: 300px;
 }
-.div-left {
+
+.mask-css {
   display: flex;
-  flex: 1;
-  background-color: yellow;
-  height: 100vh;
-}
-.div-chatHead {
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  padding: 5px;
-  height: 70px;
-  background-color: grey;
-}
-.div-white-chat {
-  background-color: #ffffff;
-  display: flex;
-  align-self: flex-start;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-top: 10px;
-  margin-left: 5px;
-  border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  max-width: 60%;
-}
-.div-blue-chat {
-  background-color: #6e48db;
-  display: flex;
-  align-self: flex-end;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-top: 10px;
-  margin-right: 5px;
-  border-radius: 10px;
-  border-bottom-right-radius: 0px;
-  max-width: 60%;
-}
-.div-chat {
-  display: flex;
-  flex: 3;
   flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 5%;
 }
-.div-main-cont2 {
-  height: 2px;
-  width: 90% !important;
-  background-color: #a5a5a5;
-  display: flex;
-  align-self: flex-end;
-  margin-top: -20px;
+
+.para-css {
+  /* font-weight: ; */
+  margin-bottom: -2px;
 }

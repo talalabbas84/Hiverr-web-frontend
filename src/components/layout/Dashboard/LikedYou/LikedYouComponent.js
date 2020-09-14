@@ -3,10 +3,10 @@ import './index.css';
 import ImageCard from './ImageCard';
 import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 
-const PeopleNearbyComponent = () => {
+const LikedYouComponent = () => {
   return (
     <MDBContainer className='mt-5'>
-      <h1 className='text-white'>People Nearby</h1>
+      <h1 className='text-white'>Liked You</h1>
       <MDBRow className='mt-3'>
         <ImageCard />
         <ImageCard />
@@ -19,4 +19,4 @@ const PeopleNearbyComponent = () => {
     </MDBContainer>
   );
 };
-export default PeopleNearbyComponent;
+export default LikedYouComponent;

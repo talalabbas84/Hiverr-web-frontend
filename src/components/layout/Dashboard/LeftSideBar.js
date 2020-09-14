@@ -93,16 +93,16 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
           <NavLink to='/messages'>Messages</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='4'>
-          Matched
+          <NavLink to='/matched'>Matched</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='5'>
-          Liked you
+          <NavLink to='/liked-you'>Liked You</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='6'>
-          Visitors
+          <NavLink to='/visitors'>Visitors</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='7'>
-          Favourites
+          <NavLink to='/favourites'>Favourites</NavLink>
         </Menu.Item>
       </Menu>
     </Sider>

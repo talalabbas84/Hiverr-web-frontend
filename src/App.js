@@ -17,6 +17,10 @@ import Encounter from './components/layout/Dashboard/Encounter/Encounter';
 import SignUp from './components/layout/SignUp/SignUp';
 import PeopleNearby from './components/layout/Dashboard/PeopleNearby/PeopleNearby';
 import Messages from './components/layout/Dashboard/Messages/Messages';
+import Matched from './components/layout/Dashboard/Matched/Matched';
+import LikedYou from './components/layout/Dashboard/LikedYou/LikedYou';
+import Visitors from './components/layout/Dashboard/Visitors/Visitor';
+import Favourities from './components/layout/Dashboard/Favourities/Favourities';
 import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
 import { loadUser } from './actions/auth';
@@ -46,6 +50,10 @@ const App = () => {
               component={EmailVerification}
             />
             <Route exact path='/messages' component={Messages} />
+            <Route exact path='/matched' component={Matched} />
+            <Route exact path='/liked-you' component={LikedYou} />
+            <Route exact path='/visitors' component={Visitors} />
+            <Route exact path='/favourites' component={Favourities} />
           </Switch>
         </Router>
       </Fragment>

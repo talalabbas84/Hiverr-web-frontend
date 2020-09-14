@@ -17,22 +17,28 @@ const MessagesComponent = () => {
       msgId: 1,
       msgTime: '35 min',
       msgText: '345 BackStreet, Dekalb, IL 60115'
+    },
+    {
+      msgId: 2,
+      msgTime: '12 min',
+      msgText:
+        'Hello this is user, text demo Lorem Epsum exponential having fast master'
     }
   ]);
-  const [DefaultMsgText, setDefaultMsgText] = useState([
-    {
-      DefaultMsgText: 'Be Right There'
-    },
-    {
-      DefaultMsgText: 'Almost there'
-    },
-    {
-      DefaultMsgText: 'Reached'
-    },
-    {
-      DefaultMsgText: 'Thanks for Services'
-    }
-  ]);
+  //   const [DefaultMsgText, setDefaultMsgText] = useState([
+  //     {
+  //       DefaultMsgText: "Be Right There",
+  //     },
+  //     {
+  //       DefaultMsgText: "Almost there",
+  //     },
+  //     {
+  //       DefaultMsgText: "Reached",
+  //     },
+  //     {
+  //       DefaultMsgText: "Thanks for Services",
+  //     },
+  //   ]);
   const [chatPeople, setchatPeople] = useState([
     {
       name: 'Sarah',
@@ -79,13 +85,19 @@ const MessagesComponent = () => {
             return (
               <div className='div-chatuser'>
                 <img src={v.img} alt='Logo' className='avatar' />
-                <p style={{ color: '#fff', fontSize: 15, margin: 5 }}>
+                <p
+                  className='name-text'
+                  //   style={{ color: "#fff", fontSize: 15, margin: 5 }}
+                >
                   {v.name}
                 </p>
               </div>
             );
           })}
         </div>
+        <div
+          style={{ width: 1, height: '100vh', backgroundColor: '#a5a5a5' }}
+        />
         <div className='div-chat'>
           <div className='div-chatHead'>
             <img
@@ -95,7 +107,8 @@ const MessagesComponent = () => {
             />
             <p style={{ color: '#fff', fontSize: 19, margin: 5 }}>Sarah</p>
           </div>
-          <div style={{ display: 'flex', flex: 1 }}>
+          <div className='grey-line' />
+          <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
             {msgArray.map((v, i) => {
               console.log(v);
               return v.msgId == 1 ? (
@@ -109,15 +122,6 @@ const MessagesComponent = () => {
               );
             })}
           </div>
-          {/* <div
-            style={{
-              height: 3,
-              backgroundColor: "#A5A5A5",
-              width: "100%",
-              display: "flex",
-              alignSelf: "flex-end",
-            }}
-          /> */}
         </div>
       </div>
     </div>

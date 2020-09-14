@@ -17,14 +17,22 @@
   align-items: flex-end;
   padding: 5px;
   height: 60px;
-  background-color: pink;
+  background-color: rgba(158, 152, 153, 0.2);
+  margin-top: 5px;
 }
 .div-left {
   display: flex;
   flex: 1;
-  background-color: yellow;
+  background-color: #575757;
   height: 100vh;
   flex-direction: column;
+}
+.grey-line {
+  height: 1;
+  background-color: #a5a5a5;
+  width: 100%;
+  display: flex;
+  align-self: flex-end;
 }
 .div-chatHead {
   width: 100%;
@@ -32,7 +40,6 @@
   align-items: flex-end;
   padding: 5px;
   height: 70px;
-  background-color: grey;
 }
 .div-white-chat {
   background-color: #ffffff;
@@ -65,10 +72,46 @@
   flex-wrap: wrap;
 }
 .div-main-cont2 {
-  height: 2px;
-  width: 90%;
+  height: 1px;
+  width: 100%;
   background-color: #a5a5a5;
   display: flex;
   align-self: flex-end;
   margin-top: -20px;
+}
+.name-text {
+  color: #fff;
+  font-size: 15px;
+  margin: 5px;
+}
+@media screen and (max-width: 768px) {
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .div-chatHead {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    height: 60px;
+  }
+  .div-white-chat {
+    max-width: 90%;
+  }
+  .div-blue-chat {
+    max-width: 90%;
+  }
+  .div-chat {
+    display: flex;
+    flex: 4;
+  }
+  .div-left {
+    display: flex;
+    flex: 0.5;
+  }
+  .name-text {
+    width: 0px;
+    font-size: 0px;
+  }
 }

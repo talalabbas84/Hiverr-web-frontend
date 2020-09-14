@@ -4,7 +4,7 @@ import Dashboard from '../Dashboard';
 import MessageComponenet from './MessagesComponent';
 
 const Messages = () => {
-  console.log('comig here ');
+  console.log('comig here');
   return (
     <Dashboard>
       <MessageComponenet />
