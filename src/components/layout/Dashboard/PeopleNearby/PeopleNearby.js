@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Dashboard from '../Dashboard';
-import PeopleNearbyComponent from './PeopleNearbyComponent';
+import Images from './PeopleNearbyComponent';
 
 const PeopleNearby = () => {
   return (
     <Dashboard>
-      <PeopleNearbyComponent />
+      <Images />
     </Dashboard>
   );
 };

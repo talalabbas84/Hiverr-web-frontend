@@ -43,7 +43,6 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <p style={{ color: '#fff', fontSize: 12 }}>Popularity: </p>
                 <p style={{ color: '#61A6FF', fontSize: 12, marginLeft: 5 }}>
-                  {' '}
                   Average
                 </p>
               </div>
@@ -91,7 +90,7 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
           <NavLink to='people-nearby'>People nearby</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='3'>
-          Messages
+          <NavLink to='/messages'>Messages</NavLink>
         </Menu.Item>
         <Menu.Item style={{ margin: 0 }} key='4'>
           Matched

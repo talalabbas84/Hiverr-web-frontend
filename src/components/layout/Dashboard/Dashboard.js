@@ -4,6 +4,7 @@ import './index.css';
 import 'antd/dist/antd.css';
 import LeftSideBar from './LeftSideBar';
 import Encounter from './Encounter/Encounter';
+import PeopleNearbyComponent from './PeopleNearby/PeopleNearbyComponent';
 import HivrrLogoText from '../../../asset/images/HivrrLogoText.png';
 
 const Dashboard = ({ children }) => {

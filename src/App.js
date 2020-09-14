@@ -16,6 +16,7 @@ import { Navbar } from './components/layout/Navbar';
 import Encounter from './components/layout/Dashboard/Encounter/Encounter';
 import SignUp from './components/layout/SignUp/SignUp';
 import PeopleNearby from './components/layout/Dashboard/PeopleNearby/PeopleNearby';
+import Messages from './components/layout/Dashboard/Messages/Messages';
 import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
 import { loadUser } from './actions/auth';
@@ -44,6 +45,7 @@ const App = () => {
               path='/email-verification'
               component={EmailVerification}
             />
+            <Route exact path='/messages' component={Messages} />
           </Switch>
         </Router>
       </Fragment>
