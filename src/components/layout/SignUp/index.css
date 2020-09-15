@@ -48,6 +48,6 @@
   }
   .section-css {
     background-color: #211c1c;
-    height: 100%;
+    min-height: 120vh !important;
   }
 }
