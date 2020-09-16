@@ -201,4 +201,8 @@ Button.button-signin {
     display: flex;
     flex-direction: column;
   }
+
+  .background-image {
+    height: 120vh;
+  }
 }
