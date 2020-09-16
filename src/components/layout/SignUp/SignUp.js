@@ -8,7 +8,7 @@ const SignUp = () => {
   return (
     <Fragment>
       <Header />
-      <section className='section-css'>
+      <section className='section-css1'>
         <SignUpComponent />
       </section>
     </Fragment>
