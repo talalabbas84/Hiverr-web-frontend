@@ -12,8 +12,8 @@ const Header = props => {
   };
   return (
     <div class='d-flex justify-content-around div-main-main-wrapper'>
-      <div className='div-main' style={{ backgroundColor: 'transparent' }}>
-        <img style={{ width: '130px', height: '84px' }} src={hiverLogo} />
+      <div className='div-main1' style={{ backgroundColor: 'transparent' }}>
+        <img style={{ width: '150px', height: '65px' }} src={hiverLogo} />
       </div>
       <div className='div-right'>
         <div className='div-encounter'>

@@ -50,7 +50,9 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
           ) : null}
         </div>
         {!collapsed && (
-          <button className='btn-inc-pop'>Increase popularity</button>
+          <NavLink to='/popularity'>
+            <button className='btn-inc-pop'>Increase popularity </button>
+          </NavLink>
         )}
         <div
           style={{
@@ -72,6 +74,7 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
             <div className='coin-div'>
               <img src={DiamondImg} style={{ width: 20, height: 20 }} />
             </div>
+
             <p style={{ color: '#fff', marginTop: 10, fontSize: 12 }}>
               Hivrr Premium
             </p>

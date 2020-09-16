@@ -20,6 +20,7 @@ import Messages from './components/layout/Dashboard/Messages/Messages';
 import Matched from './components/layout/Dashboard/Matched/Matched';
 import LikedYou from './components/layout/Dashboard/LikedYou/LikedYou';
 import Visitors from './components/layout/Dashboard/Visitors/Visitor';
+import Popularity from './components/layout/Dashboard/Popularity/Popularity';
 import Favourities from './components/layout/Dashboard/Favourities/Favourities';
 import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
@@ -54,6 +55,7 @@ const App = () => {
             <Route exact path='/liked-you' component={LikedYou} />
             <Route exact path='/visitors' component={Visitors} />
             <Route exact path='/favourites' component={Favourities} />
+            <Route exact path='/popularity' component={Popularity} />
           </Switch>
         </Router>
       </Fragment>

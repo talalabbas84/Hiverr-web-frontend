@@ -13,11 +13,7 @@ const Background = () => {
       <div className='main-wrapper'>
         <Card />
         <div className='div-phone-img'>
-          <img
-            src={HiverIphone}
-            className='mob-img'
-            // style={{ width: 400, marginTop: 100 }}
-          />
+          <img src={HiverIphone} className='mob-img' />
         </div>
       </div>
     </div>

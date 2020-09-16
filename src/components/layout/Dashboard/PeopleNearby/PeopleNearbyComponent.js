@@ -5,9 +5,9 @@ import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 
 const PeopleNearbyComponent = () => {
   return (
-    <MDBContainer className='mt-5'>
-      <h1 className='text-white'>People Nearby</h1>
-      <MDBRow className='mt-3'>
+    <MDBContainer className='div-main-cont'>
+      <h1 className='heading-css'>People Nearby</h1>
+      <MDBRow>
         <ImageCard />
         <ImageCard />
         <ImageCard />

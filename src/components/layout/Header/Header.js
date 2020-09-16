@@ -28,7 +28,7 @@ const Headerr = props => {
     <Fragment>
       <MDBNavbar dark expand='md'>
         <MDBNavbarBrand className='ml-2'>
-          <img style={{ width: '100px', height: '55px' }} src={hiverLogo} />
+          <img style={{ width: '130px', height: '55px' }} src={hiverLogo} />
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={toggleCollapse} />
         <MDBCollapse id='navbarCollapse3' isOpen={isOpen} navbar>
