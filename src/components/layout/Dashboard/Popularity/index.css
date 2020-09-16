@@ -193,4 +193,17 @@ h1 {
   .premium-css {
     flex-direction: column;
   }
+
+  .heading3-css {
+    font-size: large;
+    text-align: center;
+  }
+  .heading4-css {
+    /* font-size: large; */
+    text-align: center;
+  }
+
+  .border-css {
+    margin-top: 5px;
+  }
 }
