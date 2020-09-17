@@ -24,6 +24,7 @@ import Popularity from './components/layout/Dashboard/Popularity/Popularity';
 import Favourities from './components/layout/Dashboard/Favourities/Favourities';
 import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
+import Setting from './components/layout/Dashboard/Setting/Setting';
 import { loadUser } from './actions/auth';
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
             <Route exact path='/visitors' component={Visitors} />
             <Route exact path='/favourites' component={Favourities} />
             <Route exact path='/popularity' component={Popularity} />
+            <Route exact path='/setting' component={Setting} />
           </Switch>
         </Router>
       </Fragment>

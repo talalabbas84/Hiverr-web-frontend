@@ -25,6 +25,7 @@ export const SinglePhotoUpload = () => {
     }
     return isJpgOrPng && isLt2M;
   };
+
   const handleChange = info => {
     if (info.file.status === 'uploading') {
       setLoading(true);
