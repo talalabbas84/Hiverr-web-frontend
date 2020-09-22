@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../Header/Header';
 import './photos.css';
 import { Upload, message } from 'antd';
@@ -66,7 +67,7 @@ export const SinglePhotoUpload = () => {
         <Upload
           className='avatar'
           listType='picture-card'
-          className='avatar-uploader'
+          className='avatar-uploader1'
           showUploadList={false}
           action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
           beforeUpload={beforeUpload}
@@ -79,15 +80,12 @@ export const SinglePhotoUpload = () => {
           )}
         </Upload>
         <br></br>
-        <button type='button' className=' btn-upload'>
-          Upload
-        </button>
+        <Link to='/multi-photo-upload'>
+          <button type='button' className=' btn-upload'>
+            Upload
+          </button>
+        </Link>
       </div>
-      <footer
-        style={{ backgroundColor: '#575757', width: '100%', color: '#575757' }}
-      >
-        <p>hello</p>
-      </footer>
     </div>
   );
 };

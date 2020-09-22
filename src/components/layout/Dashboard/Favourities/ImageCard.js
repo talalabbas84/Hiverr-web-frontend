@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { MDBMask, MDBView, MDBCol } from 'mdbreact';
 
 const ImageCard = () => {
   return (

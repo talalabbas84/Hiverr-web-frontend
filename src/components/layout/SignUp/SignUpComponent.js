@@ -5,7 +5,6 @@ import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import {
   MDBBtn,
-  MDBIcon,
   MDBBtnGroup,
   MDBDropdown,
   MDBDropdownToggle,
@@ -48,16 +47,16 @@ const styles = theme => ({
 const SignUpComponent = props => {
   const [name, setName] = useState('InputMode');
 
-  const handleChange = name => event => {
-    setName({
-      [name]: event.target.value
-    });
-  };
+  // const handleChange = name => event => {
+  //   setName({
+  //     [name]: event.target.value
+  //   });
+  // };
   // const classes = useStyles();
-  const onChange = (date, dateString) => {
-    console.log(date, dateString);
-  };
-  const { classes } = props;
+  // const onChange = (date, dateString) => {
+  //   console.log(date, dateString);
+  // };
+  // const { classes } = props;
 
   return (
     <Fragment>

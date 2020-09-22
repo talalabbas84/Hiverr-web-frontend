@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 import ImageCard from './ImageCard';
-import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { MDBContainer, MDBRow } from 'mdbreact';
 
 const FavouritiesComponent = () => {
   return (

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
-import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import { Button } from '@material-ui/core';
+import { MDBContainer } from 'mdbreact';
 
 const PopularityComponent = () => {
   return (

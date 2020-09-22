@@ -23,8 +23,10 @@ import Visitors from './components/layout/Dashboard/Visitors/Visitor';
 import Popularity from './components/layout/Dashboard/Popularity/Popularity';
 import Favourities from './components/layout/Dashboard/Favourities/Favourities';
 import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
+import { MultiPhotoUpload } from './components/layout/PhotoUpload/MultiPhotoUpload/MultiPhotoUpload';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
 import Setting from './components/layout/Dashboard/Setting/Setting';
+import Profile from './components/layout/Dashboard/Profile/Profile';
 import { loadUser } from './actions/auth';
 
 const App = () => {
@@ -48,6 +50,12 @@ const App = () => {
             />
             <Route
               exact
+              path='/multi-photo-upload'
+              // component={MultiPhotoUpload}
+              component={MultiPhotoUpload}
+            />
+            <Route
+              exact
               path='/email-verification'
               component={EmailVerification}
             />
@@ -58,6 +66,7 @@ const App = () => {
             <Route exact path='/favourites' component={Favourities} />
             <Route exact path='/popularity' component={Popularity} />
             <Route exact path='/setting' component={Setting} />
+            <Route exact path='/profile' component={Profile} />
           </Switch>
         </Router>
       </Fragment>
