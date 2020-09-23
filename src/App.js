@@ -28,6 +28,7 @@ import EmailVerification from './components/layout/Verification/EmailVerificatio
 import Setting from './components/layout/Dashboard/Setting/Setting';
 import Profile from './components/layout/Dashboard/Profile/Profile';
 import { loadUser } from './actions/auth';
+import Gallery from './components/layout/Dashboard/Gallery/Gallery';
 
 const App = () => {
   useEffect(() => {
@@ -67,6 +68,7 @@ const App = () => {
             <Route exact path='/popularity' component={Popularity} />
             <Route exact path='/setting' component={Setting} />
             <Route exact path='/profile' component={Profile} />
+            <Route exact path='/gallery' component={Gallery} />
           </Switch>
         </Router>
       </Fragment>

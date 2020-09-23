@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../Header/Header';
 import './multiphotoupload.css';
 import { Upload, message } from 'antd';
@@ -156,9 +157,11 @@ export const MultiPhotoUpload = () => {
           </Upload>
         </div>
         <br></br>
-        <button type='button' className=' btn-upload'>
-          Upload
-        </button>
+        <Link to='/encounter'>
+          <button type='button' className=' btn-upload'>
+            Upload
+          </button>
+        </Link>
       </div>
     </div>
   );

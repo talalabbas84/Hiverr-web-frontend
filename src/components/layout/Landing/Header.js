@@ -10,13 +10,18 @@ const Header = props => {
   const signInHandler = () => {
     props.history.push('/login');
   };
+
+  const encounterHandler = () => {
+    alert('dasda');
+    history.push('/encouter');
+  };
   return (
     <div class='d-flex justify-content-around div-main-main-wrapper'>
       <div className='div-main1' style={{ backgroundColor: 'transparent' }}>
         <img style={{ width: '150px', height: '65px' }} src={hiverLogo} />
       </div>
       <div className='div-right'>
-        <div className='div-encounter'>
+        <div className='div-encounter' onClick={() => encounterHandler()}>
           <FavoriteBorderOutlinedIcon
             style={{ color: '#fff' }}
             fontSize={'large'}

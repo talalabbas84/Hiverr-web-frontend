@@ -75,6 +75,12 @@ Button.btn-malefemale {
   margin-top: 20px;
   border-radius: 7px;
   background-color: #ffffff;
+  color: black !important;
+
+  /* background: #7348ef; */
+}
+.btn-malefemale-link {
+  color: black !important;
 }
 
 #text-youre {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu } from 'antd';
@@ -39,7 +39,9 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
           />
           {collapsed === false ? (
             <div>
-              <p style={{ color: '#fff', fontSize: 13 }}>Jessica jones</p>
+              <Link to='/profile'>
+                <p style={{ color: '#fff', fontSize: 13 }}>Jessica jones</p>
+              </Link>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <p style={{ color: '#fff', fontSize: 12 }}>Popularity: </p>
                 <p style={{ color: '#61A6FF', fontSize: 12, marginLeft: 5 }}>

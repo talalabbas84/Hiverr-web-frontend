@@ -156,6 +156,7 @@
   width: 50%;
   margin-top: 10px;
 }
+
 @media screen and (max-width: 768px) {
   .div-swiper-content-profile {
     width: 100vh;
@@ -172,5 +173,14 @@
   }
   .right-btns {
     margin-left: 2px;
+  }
+  .div-head-profile {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .name-text {
+    font-size: 22px;
+    margin-top: 45px;
+    width: 50%;
   }
 }
