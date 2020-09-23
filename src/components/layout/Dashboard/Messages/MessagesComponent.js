@@ -86,7 +86,7 @@ const MessagesComponent = () => {
               <div className='div-chatuser'>
                 <img src={v.img} alt='Logo' className='avatar' />
                 <p
-                  className='name-text'
+                  className='name-text-1'
                   //   style={{ color: "#fff", fontSize: 15, margin: 5 }}
                 >
                   {v.name}
