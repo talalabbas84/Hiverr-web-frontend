@@ -13,11 +13,11 @@ const ImageCard = () => {
           alt=''
         />
         <MDBMask className='mask-css' overlay='teal-slight'>
-          <p className='white-text para-css '>Sia, 23</p>
+          <p className='white-text para-css-1 '>Sia, 23</p>
 
-          <p className='white-text para-css'>Ontario</p>
+          <p className='white-text para-css-1'>Ontario</p>
 
-          <p className='white-text para-css'>2.3 km away</p>
+          <p className='white-text para-css-1'>2.3 km away</p>
         </MDBMask>
       </MDBView>
     </MDBCol>

@@ -7,7 +7,10 @@ import LeftSideBar from './LeftSideBar';
 import HivrrLogoText from '../../../asset/images/HivrrLogoText.png';
 
 const Dashboard = ({ children }) => {
-  const [collapsed, setcollapsed] = useState(true);
+  const [collapsed, setcollapsed] = useState(
+    window.innerWidth > 768 ? false : true
+  );
+  console.log(window.innerWidth);
 
   const setCollapsedHandler = collapsed => {
     setcollapsed(!collapsed);
