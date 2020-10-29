@@ -151,6 +151,7 @@ const ProfileComponent = props => {
         <div className='work-education'>
           <p className='text-heading'>Location</p>
           <p className='text-para'>Toronto, Canada</p>
+          <Input style={{ width: 405 }} placeholder='Toronto, Canada' />
         </div>
 
         <div className='div-line' />
@@ -158,6 +159,10 @@ const ProfileComponent = props => {
         <div className='work-education'>
           <p className='text-heading'>I'm here to</p>
           <p className='text-para'>Have long term commitment</p>
+          <Input
+            style={{ width: 405 }}
+            placeholder='Have long term commitment'
+          />
         </div>
 
         <div className='div-line' />
