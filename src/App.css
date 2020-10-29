@@ -32,6 +32,79 @@
   color: #61dafb;
 }
 
+.alert {
+  padding: 0.8rem;
+  /* margin: 1rem 0; */
+  opacity: 0.9;
+  background: var(--light-color) !important;
+  color: #333 !important;
+  display: flex;
+  text-align: center;
+  background: red !important;
+  /* background-color: red !important; */
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: var(--light-color) !important;
+  color: #333;
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+  background: var(--danger-color) !important;
+  color: #fff !important;
+}
+
+.alert-danger2 {
+  background: var(--danger-color) !important;
+  color: red !important;
+  font-size: 15x !important;
+}
+
+.alert-success2 {
+  background: var(--danger-color) !important;
+  color: #007bff !important;
+  font-size: 15px !important;
+}
+
+.btn-success,
+.bg-success,
+.badge-success,
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.btn-white,
+.bg-white,
+.badge-white,
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,12 +1,44 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { Paper, Grid } from '@material-ui/core';
+import React, { Fragment, useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link, Redirect } from 'react-router-dom';
+import { Paper, Grid, LinearProgress } from '@material-ui/core';
 import { MDBBtn, MDBIcon } from 'mdbreact';
-import { Input } from 'antd';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { login } from '../../../actions/auth';
+import Alert from '../Alert';
 
-const SignInComponent = () => {
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     width: '100%',
+//     '& > * + *': {
+//       marginTop: theme.spacing(2)
+//     }
+//   }
+// }));
+
+const SignInComponent = ({ login, isAuthenticated }) => {
+  // const classes = useStyles();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+
+  const { email, password } = formData;
+
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    login(email, password);
+  };
+  if (isAuthenticated) {
+    return <Redirect to='/encounter' />;
+  }
   return (
     <Fragment>
+      {/* <LinearProgress variant='determinate' value={progress} /> */}
       <Grid className='main-container' container>
         <Grid
           alignItems='center'
@@ -53,9 +85,13 @@ const SignInComponent = () => {
               </label>
               <input
                 type='text'
+                value={email}
+                required
+                onChange={e => onChange(e)}
                 className='form-control form-control-md'
                 id='formGroupExampleInput'
                 style={{ width: 350 }}
+                name='email'
                 size='lg'
               />
             </div>
@@ -67,6 +103,9 @@ const SignInComponent = () => {
                 type='password'
                 className='form-control form-control-md'
                 id='formGroupExampleInput'
+                value={password}
+                name='password'
+                onChange={e => onChange(e)}
               />
             </div>
 
@@ -85,12 +124,15 @@ const SignInComponent = () => {
                 </label>
               </div>
             </div>
+            <div className='margin-css-4'>
+              <Alert />
+            </div>
             <div className='btn-sign-in'>
-              <Link to='/encounter'>
-                <MDBBtn className='mr-2' rounded>
-                  Sign me in!
-                </MDBBtn>
-              </Link>
+              {/* <Link to='/encounter'> */}
+              <MDBBtn className='mr-2' rounded onClick={e => onSubmit(e)}>
+                Sign me in!
+              </MDBBtn>
+              {/* </Link> */}
             </div>
             <div className='btn-sign-in'>
               <label
@@ -119,4 +161,13 @@ const SignInComponent = () => {
   );
 };
 
-export default SignInComponent;
+SignInComponent.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(SignInComponent);

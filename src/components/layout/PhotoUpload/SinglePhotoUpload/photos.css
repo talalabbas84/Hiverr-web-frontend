@@ -20,6 +20,10 @@
   display: flex;
   /* justify-content: center; */
 }
+/* .avatar-uploader > .ant-upload {
+  width: 500px;
+  height: 500px;
+} */
 .body p2 {
   display: flex;
   justify-content: center;

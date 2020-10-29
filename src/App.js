@@ -22,7 +22,7 @@ import LikedYou from './components/layout/Dashboard/LikedYou/LikedYou';
 import Visitors from './components/layout/Dashboard/Visitors/Visitor';
 import Popularity from './components/layout/Dashboard/Popularity/Popularity';
 import Favourities from './components/layout/Dashboard/Favourities/Favourities';
-import { SinglePhotoUpload } from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
+import SinglePhotoUpload from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
 import { MultiPhotoUpload } from './components/layout/PhotoUpload/MultiPhotoUpload/MultiPhotoUpload';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
 import Setting from './components/layout/Dashboard/Setting/Setting';
@@ -33,7 +33,9 @@ import Gallery from './components/layout/Dashboard/Gallery/Gallery';
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
+    // console.log(store.dispatch(loadUser()));
   }, []);
+
   return (
     <Provider store={store}>
       <Fragment>

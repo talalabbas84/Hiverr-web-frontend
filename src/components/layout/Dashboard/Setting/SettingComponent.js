@@ -1,16 +1,19 @@
 import React from 'react';
 import './index.css';
+import moment from 'moment';
+import { connect } from 'react-redux';
 
 import { MDBContainer } from 'mdbreact';
 import { RadioGroup, Radio, FormControlLabel } from '@material-ui/core';
 
 import DiamondImg from '../../../../asset/images/diamond.png';
-const SettingComponent = () => {
+const SettingComponent = user => {
   // const [radio, setradio] = React.useState('');
 
   // const onClick = event => {
   //   setradio(event);
   // };
+  console.log(user.user && user.user.user.name);
   return (
     <MDBContainer className='div-main-cont'>
       <div className='setting-page-main-div'>
@@ -18,31 +21,42 @@ const SettingComponent = () => {
           <div className='heading-div'>Your basic info</div>
           <div className='row-div-css'>
             <div className='title-css'>Name</div>
-            <div className='value-css'>John Smith</div>
+            <div className='value-css'>
+              {user && user.user && user.user.user.name}
+            </div>
           </div>
           <div className='row-div-css'>
             <div className='title-css'>Date of Birth</div>
-            <div className='value-css'>6 January 1997</div>
+            <div className='value-css'>
+              {user &&
+                user.user &&
+                moment(user.user.user.dob).format('MMMM Do YYYY')}
+            </div>
           </div>
           <div className='row-div-css'>
             <div className='title-css'>Gender</div>
-            <div className='value-css'>Male</div>
+            <div className='value-css'>
+              {user && user.user && user.user.user.gender}
+            </div>
           </div>
         </div>
         <div className='setting-main-div'>
           <div className='heading-div'>Your account</div>
           <div className='row-div-css'>
             <div className='title-css'>Email</div>
-            <div className='value-css'>youremail@gmail.com</div>
+            <div className='value-css'>
+              {' '}
+              {user && user.user && user.user.user.email}
+            </div>
           </div>
-          <div className='row-div-css'>
+          {/* <div className='row-div-css'>
             <div className='title-css'>Password</div>
             <div className='value-css'>**************</div>
           </div>
           <div className='row-div-css'>
             <div className='title-css'>Phone verification</div>
             <div className='value-css'>+1 470**********</div>
-          </div>
+          </div> */}
         </div>
         <div className='setting-main-div'>
           <div className='heading-div'>Privacy</div>
@@ -268,4 +282,13 @@ const SettingComponent = () => {
   );
 };
 
-export default SettingComponent;
+const mapStateToProps = state => ({
+  // errors: state.authReducer.errors,
+  // isVerified: state.authReducer.isVerified,
+  // loading: state.authReducer.loading,
+  // user: state.authReducer.user,
+  // token: state.authReducer.token
+  user: state.auth.user
+});
+
+export default connect(mapStateToProps)(SettingComponent);

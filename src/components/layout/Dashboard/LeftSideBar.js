@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useHistory, useLocation } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu } from 'antd';
@@ -7,7 +9,16 @@ import CoinImg from '../../../asset/images/coin.png';
 import DiamondImg from '../../../asset/images/diamond.png';
 const { Sider } = Layout;
 
-const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
+const LeftSideBar = ({
+  collapsed,
+  setCollapsedHandler,
+  user,
+  isAuthenticated
+}) => {
+  // if (isAuthenticated) {
+  //   return <Redirect to='/login' />;
+  // }
+  console.log(user);
   const history = useHistory();
   const location = useLocation();
   const { pathname } = location;
@@ -43,14 +54,16 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
       >
         <div className='div-avatar'>
           <img
-            src='https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/4f/Jessica_Jones_Season_2_Promotional.png/revision/latest?cb=20180626040112'
-            alt='Logo'
+            src={user && user.user && user.user.profilePic}
+            alt='Profile Pic'
             className='avatar'
           />
           {collapsed === false ? (
             <div>
               <Link to='/profile'>
-                <p style={{ color: '#fff', fontSize: 13 }}>Jessica jones</p>
+                <p style={{ color: '#fff', fontSize: 13 }}>
+                  {user && user.user && user.user.name}
+                </p>
               </Link>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <p style={{ color: '#fff', fontSize: 12 }}>Popularity: </p>
@@ -156,4 +169,9 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
   );
 };
 
-export default LeftSideBar;
+const mapStateToProps = state => ({
+  user: state.auth.user,
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(LeftSideBar);

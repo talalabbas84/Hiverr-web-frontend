@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Upload, Modal } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import './index.css';
@@ -8,6 +9,8 @@ import { Select, Tag, Input } from 'antd';
 
 const ProfileComponent = props => {
   const [previewVisible, setpreviewVisible] = useState(false);
+  const [interests, setInterests] = useState([]);
+  let options1 = [];
   const [previewImage, setPreviewImage] = useState('');
   const [fileList, setfileList] = useState([
     {
@@ -34,15 +37,42 @@ const ProfileComponent = props => {
     </div>
   );
 
-  const options = [
-    { value: 'Music' },
-    { value: 'Gym' },
-    { value: 'Movies' },
-    { value: 'Novels' },
-    { value: 'Running' },
-    { value: 'Party' },
-    { value: 'Conversations' }
-  ];
+  const getInterests = async () => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    try {
+      const res = await axios.get('/api/v1/interest', config);
+      setInterests(res.data);
+    } catch (err) {}
+  };
+
+  useEffect(() => {
+    getInterests();
+  }, []);
+
+  console.log(interests);
+
+  // const options = [
+  //   { value: 'Music' },
+  //   { value: 'Gym' },
+  //   { value: 'Movies' },
+  //   { value: 'Novels' },
+  //   { value: 'Running' },
+  //   { value: 'Party' },
+  //   { value: 'Conversations' }
+  // ];
+
+  if (interests.data && interests.data.length > 0) {
+    interests.data.map(interest => {
+      console.log(interest);
+      options1.push({ value: interest.name });
+    });
+  }
+
+  console.log(options1, 'optionss');
   const { Option } = Select;
   const tagRender = props => {
     const { label, value, closable, onClose } = props;
@@ -77,7 +107,7 @@ const ProfileComponent = props => {
           onPreview={handlePreview}
           onChange={handleChange}
         >
-          {fileList.length >= 6 ? null : uploadButton}
+          {fileList.length >= 3 ? null : uploadButton}
           {/* {fileList.length >= 6 ? null : uploadButton}
             {fileList.length >= 6 ? null : uploadButton}
             {fileList.length >= 6 ? null : uploadButton}
@@ -138,13 +168,13 @@ const ProfileComponent = props => {
             mode='multiple'
             showArrow
             tagRender={tagRender}
-            defaultValue={['Music']}
+            // defaultValue={['Music']}
             className='select-class'
             // style={{
             //   width: "50%",
             //   marginTop: 10,
             // }}
-            options={options}
+            options={options1}
           />
           <p className='done-btn'>Done</p>
         </div>
