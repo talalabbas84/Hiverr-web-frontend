@@ -14,7 +14,11 @@ import {
   LOADING_START,
   GET_NOTIFICATION,
   CLEAR_NOTIFICATION,
-  EMAIL_RESEND_FAIL
+  EMAIL_RESEND_FAIL,
+  RESET_PASSWORD_CODE_SUCCESS,
+  CLEAR_ERRORS,
+  GET_ERRORS,
+  CLEAR_AUTH
 } from '../actions/types';
 
 // import { useHistory } from 'react-router-dom';
@@ -24,7 +28,9 @@ const initialState = {
   isAuthenticated: null,
   loading: true,
   user: null,
-  isVerified: null
+  isVerified: null,
+  notification: '',
+  error: ''
 };
 
 export default function (state = initialState, action) {
@@ -45,10 +51,8 @@ export default function (state = initialState, action) {
       localStorage.setItem('token', payload.token);
       return {
         ...state,
-        // ...payload,
         isAuthenticated: true,
         loading: false,
-        // user: payload,
 
         errors: []
       };
@@ -67,10 +71,10 @@ export default function (state = initialState, action) {
     case LOGIN_FAIL:
     case LOGOUT:
     case ACCOUNT_DELETED:
-      localStorage.removeItem('token');
+      // localStorage.removeItem('token');
       return {
         ...state,
-        token: null,
+        // token: null,
         isAuthenticated: false,
         loading: false
       };
@@ -107,6 +111,30 @@ export default function (state = initialState, action) {
         loading: false,
         notification: ''
       };
+    case GET_ERRORS:
+      return {
+        ...state,
+        loading: false,
+        errors: payload
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        loading: false,
+        errors: ''
+      };
+    case CLEAR_AUTH:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: '',
+        isAuthenticated: null,
+        loading: false,
+        user: null,
+        isVerified: null,
+        notification: '',
+        error: ''
+      };
     case EMAIL_VERIFICATION_FAIL:
       return {
         ...state,
@@ -119,6 +147,15 @@ export default function (state = initialState, action) {
         ...state,
         loading: true
       };
+    case RESET_PASSWORD_CODE_SUCCESS: {
+      localStorage.setItem('token', payload.token);
+      return {
+        ...state,
+        // user: payload,
+        token: payload.token,
+        loading: false
+      };
+    }
     default:
       return state;
   }

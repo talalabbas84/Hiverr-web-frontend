@@ -13,6 +13,7 @@ import SignIn from './components/layout/SignIn/SignIn';
 import { Navbar } from './components/layout/Navbar';
 // import Encounter from './components/layout/Encounter';
 // import Dashboard from './components/layout/Dashboard/Dashboard';
+import ForgetPassword from './components/layout/Dashboard/ForgetPassword/ForgetPassword';
 import Encounter from './components/layout/Dashboard/Encounter/Encounter';
 import SignUp from './components/layout/SignUp/SignUp';
 import PeopleNearby from './components/layout/Dashboard/PeopleNearby/PeopleNearby';
@@ -29,6 +30,7 @@ import Setting from './components/layout/Dashboard/Setting/Setting';
 import Profile from './components/layout/Dashboard/Profile/Profile';
 import { loadUser } from './actions/auth';
 import Gallery from './components/layout/Dashboard/Gallery/Gallery';
+import PasswordChange from './components/layout/NewPassword/newPassword';
 
 const App = () => {
   useEffect(() => {
@@ -44,6 +46,7 @@ const App = () => {
             <Route exact path='/' component={Landing} />
             <Route exact path='/login' component={SignIn} />
             <Route exact path='/encounter' component={Encounter} />
+            <Route exact path='/forget-password' component={ForgetPassword} />
             <Route exact path='/people-nearby' component={PeopleNearby} />
             <Route exact path='/signup' component={SignUp} />
             <Route
@@ -71,6 +74,11 @@ const App = () => {
             <Route exact path='/setting' component={Setting} />
             <Route exact path='/profile' component={Profile} />
             <Route exact path='/gallery' component={Gallery} />
+            <Route
+              exact
+              path='/forget-password-verification'
+              component={PasswordChange}
+            />
           </Switch>
         </Router>
       </Fragment>

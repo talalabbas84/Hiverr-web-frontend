@@ -28,7 +28,10 @@ const ProfileComponent = props => {
     setpreviewVisible(true);
   };
 
-  const handleChange = ({ fileList }) => setfileList(fileList);
+  const handleChange = ({ fileList }) => {
+    console.log(fileList);
+    setfileList(fileList);
+  };
 
   const uploadButton = (
     <div>

@@ -27,7 +27,7 @@ export const profilePictureUpload = (file, history) => async dispatch => {
   // console.log(body);
   try {
     const res = await axios.put(
-      '/api/v1/user/photo',
+      'https://hiverr-backend.herokuapp.com/api/v1/user/photo',
 
       bodyFormData,
       {

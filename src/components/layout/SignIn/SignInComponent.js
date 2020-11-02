@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import { Paper, Grid, LinearProgress } from '@material-ui/core';
 import { MDBBtn, MDBIcon } from 'mdbreact';
 import PropTypes from 'prop-types';
@@ -17,7 +17,7 @@ import Alert from '../Alert';
 //   }
 // }));
 
-const SignInComponent = ({ login, isAuthenticated }) => {
+const SignInComponent = ({ login, isAuthenticated, history }) => {
   // const classes = useStyles();
   const [formData, setFormData] = useState({
     email: '',
@@ -33,6 +33,11 @@ const SignInComponent = ({ login, isAuthenticated }) => {
     e.preventDefault();
     login(email, password);
   };
+
+  const forgotYourPasswordHandler = () => {
+    history.push('/forget-password');
+  };
+
   if (isAuthenticated) {
     return <Redirect to='/encounter' />;
   }
@@ -138,6 +143,7 @@ const SignInComponent = ({ login, isAuthenticated }) => {
               <label
                 className='underlined-para'
                 htmlFor='formGroupExampleInput'
+                onClick={forgotYourPasswordHandler}
               >
                 Forgot your password?
               </label>
@@ -170,4 +176,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { login })(SignInComponent);
+export default withRouter(connect(mapStateToProps, { login })(SignInComponent));
