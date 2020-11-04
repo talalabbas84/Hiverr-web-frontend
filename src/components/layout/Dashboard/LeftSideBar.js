@@ -30,6 +30,9 @@ const LeftSideBar = ({
     setCollapsedHandler(collapsed);
     // alert("This is collapse");
   };
+  const profileNavigatorHandler = () => {
+    history.push('/profile');
+  };
   const MenuItemHandler = () => {};
   return (
     <Sider
@@ -52,12 +55,14 @@ const LeftSideBar = ({
         mode='inline'
         selectedKeys={[pathname]}
       >
-        <div className='div-avatar'>
-          <img
-            src={user && user.user && user.user.profilePic}
-            alt='Profile Pic'
-            className='avatar'
-          />
+        <div className='div-avatar' onClick={profileNavigatorHandler}>
+          <div className='avatar-cursor'>
+            <img
+              src={user && user.user && user.user.otherphotos[0].url}
+              alt='Profile Pic'
+              className='avatar'
+            />
+          </div>
           {collapsed === false ? (
             <div>
               <Link to='/profile'>

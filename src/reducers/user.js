@@ -1,7 +1,8 @@
 import {
   PROFILE_PICTURE_FAIL,
   PROFILE_PICTURE_SUCCESS,
-  LOADING_START
+  LOADING_START,
+  LOADING_STOP
 } from '../actions/types';
 
 // import { useHistory } from 'react-router-dom';
@@ -25,11 +26,12 @@ export default function (state = initialState, action) {
         ...state,
         loading: false
       };
-    case LOADING_START:
-      return {
-        ...state,
-        loading: true
-      };
+    // case LOADING_START:
+    //   return {
+    //     ...state,
+    //     loading: true
+    //   };
+
     default:
       return state;
   }

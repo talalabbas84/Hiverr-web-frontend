@@ -18,7 +18,8 @@ import {
   RESET_PASSWORD_CODE_SUCCESS,
   CLEAR_ERRORS,
   GET_ERRORS,
-  CLEAR_AUTH
+  CLEAR_AUTH,
+  LOADING_STOP
 } from '../actions/types';
 
 // import { useHistory } from 'react-router-dom';
@@ -146,6 +147,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: true
+      };
+    case LOADING_STOP:
+      return {
+        ...state,
+        loading: false
       };
     case RESET_PASSWORD_CODE_SUCCESS: {
       localStorage.setItem('token', payload.token);

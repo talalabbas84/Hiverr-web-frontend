@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import { Upload, Modal } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
@@ -7,30 +8,54 @@ import './index.css';
 import { ArrowUpOutlined } from '@ant-design/icons';
 import { Select, Tag, Input } from 'antd';
 
-const ProfileComponent = props => {
+import { multiPictureUpload, deletePictures } from '../../../../actions/user';
+
+const ProfileComponent = ({ user, multiPictureUpload, deletePictures }) => {
   const [previewVisible, setpreviewVisible] = useState(false);
   const [interests, setInterests] = useState([]);
+  const [onepicerror, setOnepicerror] = useState(false);
   let options1 = [];
   const [previewImage, setPreviewImage] = useState('');
-  const [fileList, setfileList] = useState([
-    {
-      uid: -1,
-      name: 'xxx.png',
-      status: 'done',
-      url:
-        'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
-    }
-  ]);
+  const [fileList, setfileList] = useState([]);
+  const { TextArea } = Input;
+
+  // useEffect(() => {}, []);
   const handleCancel = () => setpreviewVisible(false);
 
+  if (user && user.user && user.user.otherphotos) {
+    if (fileList !== user.user.otherphotos) {
+      setfileList(user.user.otherphotos);
+    }
+  }
+
   const handlePreview = file => {
+    // console.log(file, 'dsdasdassda');
     setPreviewImage(file.url || file.thumbUrl);
     setpreviewVisible(true);
   };
 
   const handleChange = ({ fileList }) => {
-    console.log(fileList);
+    // console.log(fileList[fileList.length - 1].originFileObj);
+    // console.log('how many time is it coing here');
+
     setfileList(fileList);
+  };
+
+  const removeHandler = e => {
+    console.log(e.url, 'removeeeeeeeee pictire');
+    if (fileList.length > 1) {
+      deletePictures(e.url);
+      setOnepicerror(false);
+    } else {
+      setOnepicerror(true);
+      setTimeout(() => {
+        setOnepicerror(false);
+      }, 1500);
+    }
+  };
+  const beforeUploadHandler = e => {
+    console.log(e, 'this is before upload');
+    multiPictureUpload(e);
   };
 
   const uploadButton = (
@@ -47,7 +72,10 @@ const ProfileComponent = props => {
       }
     };
     try {
-      const res = await axios.get('/api/v1/interest', config);
+      const res = await axios.get(
+        'ttps://hiverr-backend.herokuapp.com/api/v1/interest',
+        config
+      );
       setInterests(res.data);
     } catch (err) {}
   };
@@ -57,6 +85,7 @@ const ProfileComponent = props => {
   }, []);
 
   console.log(interests);
+  console.log(fileList, 'filelistttttt');
 
   // const options = [
   //   { value: 'Music' },
@@ -92,8 +121,13 @@ const ProfileComponent = props => {
   };
   return (
     <div className='div-swiper-content-profile'>
+      {onepicerror && (
+        <p style={{ color: 'red', fontWeight: 'bold', alignContent: 'center' }}>
+          You can't remove all pictures. One picture is necessary
+        </p>
+      )}
       <div className='div-head-profile'>
-        <p className='name-text'>John Smith, 23</p>
+        <p className='name-text'>{user && user.user && user.user.name}, 23</p>
         <div className='right-btn-div'>
           <Link to='/setting'>
             <p className='right-btns'>Setting</p>
@@ -103,19 +137,23 @@ const ProfileComponent = props => {
         </div>
       </div>
       <div className='clearfix'>
-        <Upload
-          action='//jsonplaceholder.typicode.com/posts/'
-          listType='picture-card'
-          fileList={fileList}
-          onPreview={handlePreview}
-          onChange={handleChange}
-        >
-          {fileList.length >= 3 ? null : uploadButton}
-          {/* {fileList.length >= 6 ? null : uploadButton}
+        {user && user.user && user.user.otherphotos && (
+          <Upload
+            action='//jsonplaceholder.typicode.com/posts/'
+            listType='picture-card'
+            fileList={fileList}
+            onPreview={handlePreview}
+            onChange={handleChange}
+            onRemove={removeHandler}
+            beforeUpload={beforeUploadHandler}
+          >
+            {fileList.length >= 3 ? null : uploadButton}
+            {/* {fileList.length >= 6 ? null : uploadButton}
             {fileList.length >= 6 ? null : uploadButton}
             {fileList.length >= 6 ? null : uploadButton}
             {fileList.length >= 6 ? null : uploadButton} */}
-        </Upload>
+          </Upload>
+        )}
 
         <Modal visible={previewVisible} footer={null} onCancel={handleCancel}>
           <img alt='example' style={{ width: '100%' }} src={previewImage} />
@@ -195,7 +233,7 @@ const ProfileComponent = props => {
               <p className='info-text'>About me</p>
             </div>
             <div style={{ display: 'flex', flex: 2 }}>
-              <Input placeholder='Write a bit about yourself' />
+              <TextArea rows={4} placeholder='Write a bit about yourself' />
             </div>
           </div>
           <div className='div-info'>
@@ -392,4 +430,15 @@ const ProfileComponent = props => {
   );
 };
 
-export default ProfileComponent;
+const mapStateToProps = state => ({
+  // errors: state.authReducer.errors,
+  // isVerified: state.authReducer.isVerified,
+  // loading: state.authReducer.loading,
+  // user: state.authReducer.user,
+  // token: state.authReducer.token
+  user: state.auth.user
+});
+
+export default connect(mapStateToProps, { multiPictureUpload, deletePictures })(
+  ProfileComponent
+);
