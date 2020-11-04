@@ -1,0 +1,117 @@
+.div-main-cont {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #575757;
+}
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  object-fit: cover;
+  margin-right: 7px;
+}
+.div-chatuser {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 5px;
+  height: 60px;
+  background-color: rgba(158, 152, 153, 0.2);
+  margin-top: 5px;
+}
+.div-left {
+  display: flex;
+  flex: 1;
+  background-color: #575757;
+  height: 100vh;
+  flex-direction: column;
+}
+.grey-line {
+  height: 1;
+  background-color: #a5a5a5;
+  width: 100%;
+  display: flex;
+  align-self: flex-end;
+}
+.div-chatHead {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 5px;
+  height: 70px;
+}
+.div-white-chat {
+  background-color: #ffffff;
+  display: flex;
+  align-self: flex-start;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  max-width: 60%;
+}
+.div-blue-chat {
+  background-color: #6e48db;
+  display: flex;
+  align-self: flex-end;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  max-width: 60%;
+}
+.div-chat {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.div-main-cont2 {
+  height: 1px;
+  width: 100%;
+  background-color: #a5a5a5;
+  display: flex;
+  align-self: flex-end;
+  margin-top: -20px;
+}
+.name-text-1 {
+  color: #fff;
+  font-size: 15px;
+  margin: 5px;
+}
+@media screen and (max-width: 768px) {
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .div-chatHead {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    height: 60px;
+  }
+  .div-white-chat {
+    max-width: 90%;
+  }
+  .div-blue-chat {
+    max-width: 90%;
+  }
+  .div-chat {
+    display: flex;
+    flex: 4;
+  }
+  .div-left {
+    display: flex;
+    flex: 0.5;
+  }
+  .name-text {
+    width: 0px;
+    font-size: 0px;
+  }
+}

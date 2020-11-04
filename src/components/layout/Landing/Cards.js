@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Button } from '@material-ui/core';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -51,21 +52,16 @@ const Cards = () => {
             variant='h6'
             style={{ width: 200, textAlign: 'center', marginTop: '40px' }}
           >
-            Sign up by answering a few questions:
-          </Typography>
-          <Typography
-            variant='body1'
-            // className="text-youre"
-            id='text-youre'
-          >
-            You're
+            Sign up and join our community
           </Typography>
           <Button variant='contained' className='btn-malefemale'>
-            Male
+            <Link className='btn-malefemale-link' to='/signup'>
+              Join Hiverr
+            </Link>
           </Button>
-          <Button variant='contained' className='btn-malefemale'>
+          {/* <Button variant='contained' className='btn-malefemale'>
             Female
-          </Button>
+          </Button> */}
         </CardContent>
       </Card>
     </div>

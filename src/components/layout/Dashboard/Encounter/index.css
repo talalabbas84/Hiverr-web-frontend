@@ -1,0 +1,27 @@
+.div-swiper-content {
+  display: flex;
+  flex: 1;
+  background-color: #fff;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+}
+
+.div-carousel {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  /* margin-top: -82px; */
+}
+
+.carousel-css {
+  /* background-color: red; */
+  width: 100%;
+  height: 100vh;
+}
+.img-swiper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: chartreuse !important;
+  /* margin-bottom: -50px; */
+}

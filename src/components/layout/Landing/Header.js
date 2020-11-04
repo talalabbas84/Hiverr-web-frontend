@@ -7,20 +7,26 @@ import { Button } from '@material-ui/core';
 
 const Header = props => {
   const history = useHistory();
-  const signInHandler = () => {
-    props.history.push('/login');
-  };
+  // const signInHandler = () => {
+  //   props.history.push('/login');
+  // };
+
+  // const encounterHandler = () => {
+  //   alert('dasda');
+  //   history.push('/encouter');
+  // };
   return (
-    <div class='d-flex justify-content-around div-main-main-wrapper' style={{backgroundColor:"#6E48DB"}}>
-      <div className='div-main'>
-        <img style={{ width: '130px', height: '84px' }} src={hiverLogo} />
+    <div class='d-flex justify-content-around div-main-main-wrapper'>
+      <div className='div-main1' style={{ backgroundColor: 'transparent' }}>
+        <img style={{ width: '150px', height: '65px' }} src={hiverLogo} />
       </div>
       <div className='div-right'>
-        <div className='div-encounter'>
+        {/* <div className='div-encounter' onClick={() => alert('dasda')}>
           <FavoriteBorderOutlinedIcon
             style={{ color: '#fff' }}
             fontSize={'large'}
           />
+
           <p
             style={{
               margin: '2px',
@@ -29,21 +35,23 @@ const Header = props => {
           >
             Encounter
           </p>
-        </div>
-        <div className='div-nearby'>
-          <LocationOnOutlinedIcon
-            style={{ color: '#fff' }}
-            fontSize={'large'}
-          />
-          <p
-            style={{
-              margin: '2px',
-              color: 'white'
-            }}
-          >
-            People nearby
-          </p>
-        </div>
+        </div> */}
+        {/* <div className='div-nearby'>
+          <Link>
+            <LocationOnOutlinedIcon
+              style={{ color: '#fff' }}
+              fontSize={'large'}
+            />
+            <p
+              style={{
+                margin: '2px',
+                color: 'white'
+              }}
+            >
+              People nearby
+            </p>
+          </Link>
+        </div> */}
         <Button
           variant='outlined'
           size='small'

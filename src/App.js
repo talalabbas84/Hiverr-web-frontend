@@ -1,43 +1,88 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import { Provider } from 'react-redux';
+import store from './store';
 import './App.css';
 
 import Landing from './components/layout/Landing/Landing';
 import SignIn from './components/layout/SignIn/SignIn';
 
 import { Navbar } from './components/layout/Navbar';
-import Encounter from './components/layout/Encounter';
-import { Photos } from './components/layout/photo/Photos';
-import { Multiplephotos} from './components/layout/Multiplephoto/Multiplephotos';
-import {Verification} from './components/layout/Verification/Verification';
-import {Gallery} from './components/layout/Gallery/Gallery';
-import {info} from './components/layout/Info/info';
-import {Wall} from './components/layout/Wall/Wall';
-import {ForgetPassword} from './components/layout/ForgetPassword/ForgetPassword';
-import {PasswirdChange} from './components/layout/PasswordChange/PasswirdChange';
+// import Encounter from './components/layout/Encounter';
+// import Dashboard from './components/layout/Dashboard/Dashboard';
+import ForgetPassword from './components/layout/Dashboard/ForgetPassword/ForgetPassword';
+import Encounter from './components/layout/Dashboard/Encounter/Encounter';
+import SignUp from './components/layout/SignUp/SignUp';
+import PeopleNearby from './components/layout/Dashboard/PeopleNearby/PeopleNearby';
+import Messages from './components/layout/Dashboard/Messages/Messages';
+import Matched from './components/layout/Dashboard/Matched/Matched';
+import LikedYou from './components/layout/Dashboard/LikedYou/LikedYou';
+import Visitors from './components/layout/Dashboard/Visitors/Visitor';
+import Popularity from './components/layout/Dashboard/Popularity/Popularity';
+import Favourities from './components/layout/Dashboard/Favourities/Favourities';
+import SinglePhotoUpload from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
+import { MultiPhotoUpload } from './components/layout/PhotoUpload/MultiPhotoUpload/MultiPhotoUpload';
+import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
+import Setting from './components/layout/Dashboard/Setting/Setting';
+import Profile from './components/layout/Dashboard/Profile/Profile';
+import { loadUser } from './actions/auth';
+import Gallery from './components/layout/Dashboard/Gallery/Gallery';
+import PasswordChange from './components/layout/NewPassword/newPassword';
 
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+    // console.log(store.dispatch(loadUser()));
+  }, []);
+
   return (
-    <Fragment>
-      <Router>
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <Route exact path='/login' component={SignIn} />
-          <Route exact path='/dashboard' component={Encounter} />
-          <Route exact path='/photos' component={Photos} />
-          <Route exact path='/multiplephotos' component={Multiplephotos} />
-          <Route exact path='/verification' component={Verification} />
-          <Route exact path='/gallery' component={Gallery} />
-          <Route exact path='/info' component={info} />
-          <Route exact path='/wall' component={Wall} />
-          <Route exact path='/ForgetPassword' component={ForgetPassword} />
-          <Route exact path='/changepassword' component={PasswirdChange} />
-        </Switch>
-      </Router>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={Landing} />
+            <Route exact path='/login' component={SignIn} />
+            <Route exact path='/encounter' component={Encounter} />
+            <Route exact path='/forget-password' component={ForgetPassword} />
+            <Route exact path='/people-nearby' component={PeopleNearby} />
+            <Route exact path='/signup' component={SignUp} />
+            <Route
+              exact
+              path='/single-photo-upload'
+              component={SinglePhotoUpload}
+            />
+            <Route
+              exact
+              path='/multi-photo-upload'
+              // component={MultiPhotoUpload}
+              component={MultiPhotoUpload}
+            />
+            <Route
+              exact
+              path='/email-verification'
+              component={EmailVerification}
+            />
+            <Route exact path='/messages' component={Messages} />
+            <Route exact path='/matched' component={Matched} />
+            <Route exact path='/liked-you' component={LikedYou} />
+            <Route exact path='/visitors' component={Visitors} />
+            <Route exact path='/favourites' component={Favourities} />
+            <Route exact path='/popularity' component={Popularity} />
+            <Route exact path='/setting' component={Setting} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/gallery' component={Gallery} />
+            <Route
+              exact
+              path='/forget-password-verification'
+              component={PasswordChange}
+            />
+          </Switch>
+        </Router>
+      </Fragment>
+    </Provider>
   );
 };
 
