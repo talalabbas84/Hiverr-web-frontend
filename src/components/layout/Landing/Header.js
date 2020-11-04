@@ -11,7 +11,7 @@ const Header = props => {
     props.history.push('/login');
   };
   return (
-    <div class='d-flex justify-content-around div-main-main-wrapper'>
+    <div class='d-flex justify-content-around div-main-main-wrapper' style={{backgroundColor:"#6E48DB"}}>
       <div className='div-main'>
         <img style={{ width: '130px', height: '84px' }} src={hiverLogo} />
       </div>
