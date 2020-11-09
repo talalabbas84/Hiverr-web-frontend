@@ -5,7 +5,9 @@ import {
   PROFILE_PICTURE_FAIL,
   PROFILE_PICTURE_SUCCESS,
   LOADING_START,
-  LOADING_STOP
+  LOADING_STOP,
+  GET_ALL_USER_SUCCESS,
+  GET_ALL_USER_FAILURE
 } from './types';
 
 import { loadUser } from './auth';
@@ -151,5 +153,23 @@ export const deletePictures = url => async dispatch => {
       dispatch(setErrors(errors[0]));
       // errors.forEach(error => dispatch(setAlert(error, 'danger')));
     }
+  }
+};
+
+export const getUsers = () => async dispatch => {
+  try {
+    const res = await axios.get(
+      'https://hiverr-backend.herokuapp.com/api/v1/user'
+    );
+    console.log(res.data.data);
+
+    dispatch({
+      type: GET_ALL_USER_SUCCESS,
+      payload: res.data.data
+    });
+  } catch (err) {
+    dispatch({
+      type: GET_ALL_USER_FAILURE
+    });
   }
 };

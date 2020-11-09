@@ -2,13 +2,17 @@ import {
   PROFILE_PICTURE_FAIL,
   PROFILE_PICTURE_SUCCESS,
   LOADING_START,
-  LOADING_STOP
+  LOADING_STOP,
+  GET_ALL_USER_FAILURE,
+  GET_ALL_USER_SUCCESS
 } from '../actions/types';
 
 // import { useHistory } from 'react-router-dom';
 
 const initialState = {
-  loading: false
+  loading: false,
+  users: [],
+  error: ''
 };
 
 export default function (state = initialState, action) {
@@ -25,6 +29,19 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false
+      };
+    case GET_ALL_USER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        users: payload
+      };
+    case GET_ALL_USER_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        users: [],
+        error: payload
       };
     // case LOADING_START:
     //   return {
