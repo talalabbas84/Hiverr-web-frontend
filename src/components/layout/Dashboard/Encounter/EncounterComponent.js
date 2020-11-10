@@ -114,7 +114,7 @@ const EncounterComponenet = ({
               users[count].sexuality !== `I'd prefer not to say` &&
               users[count].sexuality &&
               users[count].sexuality !== "" && (
-                <p style={{ color: "#fff", fontSize: 18, marginTop: -30 }}>
+                <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
                   Sexuality: {users[count].sexuality}
                 </p>
               )}
@@ -122,7 +122,7 @@ const EncounterComponenet = ({
               users[count].height !== `I'd prefer not to say` &&
               users[count].height &&
               users[count].height !== "" && (
-                <p style={{ color: "#fff", fontSize: 18, marginTop: -30 }}>
+                <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
                   Height: {users[count].height}
                 </p>
               )}
@@ -130,7 +130,7 @@ const EncounterComponenet = ({
               users[count].bodyType !== `I'd prefer not to say` &&
               users[count].bodyType &&
               users[count].bodyType !== "" && (
-                <p style={{ color: "#fff", fontSize: 18, marginTop: -30 }}>
+                <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
                   Body Type: {users[count].bodyType}
                 </p>
               )}
@@ -138,7 +138,7 @@ const EncounterComponenet = ({
               users[count].children !== `I'd prefer not to say` &&
               users[count].children &&
               users[count].children !== "" && (
-                <p style={{ color: "#fff", fontSize: 18, marginTop: -30 }}>
+                <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
                   Children: {users[count].children}
                 </p>
               )}
@@ -146,7 +146,7 @@ const EncounterComponenet = ({
               users[count].smoking !== `I'd prefer not to say` &&
               users[count].smoking &&
               users[count].smoking !== "" && (
-                <p style={{ color: "#fff", fontSize: 18, marginTop: -30 }}>
+                <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
                   Smoking: {users[count].smoking}
                 </p>
               )}
@@ -154,7 +154,7 @@ const EncounterComponenet = ({
               users[count].drinking !== `I'd prefer not to say` &&
               users[count].drinking !== "" &&
               users[count].drinking && (
-                <p style={{ color: "#fff", fontSize: 18, marginTop: -30 }}>
+                <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
                   Drinking: {users[count].drinking}
                 </p>
               )}
