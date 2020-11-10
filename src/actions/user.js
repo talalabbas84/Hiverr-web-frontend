@@ -50,7 +50,7 @@ export const profilePictureUpload = (file, history) => async dispatch => {
     dispatch(loadUser());
     history.push('/encounter');
   } catch (err) {
-    const errors = err.response.data.error.split(',');
+    const errors = err.response.data.error.split(',') || ['Network Error'];
 
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error, 'danger2')));
@@ -194,7 +194,7 @@ export const updateUsers = fieldsToUpdate => async dispatch => {
   try {
     const res = await axios.put(
       // 'https://hiverr-backend.herokuapp.com/api/v1/user',
-      'https://hiverr-backend.herokuapp.com/api/v1/user/update-details',
+      '/api/v1/user/update-details',
       body,
       config
     );

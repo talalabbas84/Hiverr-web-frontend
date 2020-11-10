@@ -36,6 +36,9 @@ const EncounterComponenet = ({
   if (
     user &&
     user.user &&
+    user.user._id &&
+    users.length > 0 &&
+    users[count]._id &&
     user.user._id.toString() == users[count]._id.toString()
   ) {
     setCount(count + 1);

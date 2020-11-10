@@ -53,6 +53,9 @@ const ProfileComponent = ({
   const [imhereto, setImhereto] = useState(
     user && user.user && user.user.imhereto
   );
+  const [whatMakesYouHappy, setWhatMakesYouHappy] = useState(
+    user && user.user && user.user.interests
+  );
 
   const [fileList, setfileList] = useState([]);
   const { TextArea } = Input;
@@ -60,6 +63,7 @@ const ProfileComponent = ({
 
   // useEffect(() => {}, []);
   const handleCancel = () => setpreviewVisible(false);
+  console.log(interests, 'interesssssssssssssssssst');
 
   if (user && user.user && user.user.otherphotos) {
     if (fileList !== user.user.otherphotos) {
@@ -120,7 +124,8 @@ const ProfileComponent = ({
       children: children || user.user.children,
       smoking: smoking || user.user.smoking,
       drinking: drinking || user.user.drinking,
-      imhereto: imhereto || user.user.imhereto
+      imhereto: imhereto || user.user.imhereto,
+      interests: whatMakesYouHappy
     });
   };
 
@@ -148,7 +153,7 @@ const ProfileComponent = ({
     };
     try {
       const res = await axios.get(
-        'ttps://hiverr-backend.herokuapp.com/api/v1/interest',
+        'https://hiverr-backend.herokuapp.com/api/v1/interest',
         config
       );
       setInterests(res.data);
@@ -269,7 +274,7 @@ const ProfileComponent = ({
           <div className='work-education'>
             <p className='text-heading'>Location</p>
             <p className='text-para'>Toronto, Canada</p>
-            <Input style={{ width: 405 }} placeholder='Toronto, Canada' />
+            {/* <Input style={{ width: 405 }} placeholder='Toronto, Canada' /> */}
           </div>
 
           <div className='div-line' />
@@ -302,6 +307,8 @@ const ProfileComponent = ({
               showArrow
               tagRender={tagRender}
               // defaultValue={['Music']}
+              onChange={e => setWhatMakesYouHappy(e)}
+              defaultValue={user && user.user && user.user.interests}
               className='select-class'
               // style={{
               //   width: "50%",
@@ -309,7 +316,9 @@ const ProfileComponent = ({
               // }}
               options={options1}
             />
-            <p className='done-btn'>Done</p>
+            <p onClick={saveHandler} className='done-btn'>
+              Done
+            </p>
           </div>
 
           <div className='div-line' />
