@@ -1,19 +1,34 @@
 import React from 'react';
 import './index.css';
 import moment from 'moment';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { MDBContainer } from 'mdbreact';
 import { RadioGroup, Radio, FormControlLabel } from '@material-ui/core';
 
+import { deleteAccount, logout } from '../../../../actions/auth';
+
 import DiamondImg from '../../../../asset/images/diamond.png';
-const SettingComponent = user => {
+const SettingComponent = ({ user, deleteAccount, history, logout }) => {
   // const [radio, setradio] = React.useState('');
+
+  console.log(user, 'userrrrrrrrrrrr');
 
   // const onClick = event => {
   //   setradio(event);
   // };
-  console.log(user.user && user.user.user.name);
+
+  const deleteAccountHandler = () => {
+    deleteAccount();
+    history.push('/Login');
+  };
+
+  const logoutHandler = () => {
+    logout();
+    history.push('/Login');
+  };
+
   return (
     <MDBContainer className='div-main-cont'>
       <div className='setting-page-main-div'>
@@ -22,7 +37,7 @@ const SettingComponent = user => {
           <div className='row-div-css'>
             <div className='title-css'>Name</div>
             <div className='value-css'>
-              {user && user.user && user.user.user.name}
+              {user && user.user && user.user.name}
             </div>
           </div>
           <div className='row-div-css'>
@@ -30,13 +45,13 @@ const SettingComponent = user => {
             <div className='value-css'>
               {user &&
                 user.user &&
-                moment(user.user.user.dob).format('MMMM Do YYYY')}
+                moment(user.user.dob).format('MMMM Do YYYY')}
             </div>
           </div>
           <div className='row-div-css'>
             <div className='title-css'>Gender</div>
             <div className='value-css'>
-              {user && user.user && user.user.user.gender}
+              {user && user.user && user.user.gender}
             </div>
           </div>
         </div>
@@ -46,7 +61,7 @@ const SettingComponent = user => {
             <div className='title-css'>Email</div>
             <div className='value-css'>
               {' '}
-              {user && user.user && user.user.user.email}
+              {user && user.user && user.user.email}
             </div>
           </div>
           {/* <div className='row-div-css'>
@@ -263,14 +278,20 @@ const SettingComponent = user => {
           <div className='row-div-css-2'>
             <div className='title-css'>
               <div className='btn-main-save'>
-                <div className='sub-btn-div'>
+                <div
+                  className='sub-btn-div sub-btn-div-hover-delete'
+                  onClick={deleteAccountHandler}
+                >
                   <p className='btn-premium'>DeleteAccount</p>
                 </div>
               </div>
             </div>
             <div className='value-css'>
               <div className='btn-main-save'>
-                <div className='sub-btn-div'>
+                <div
+                  className='sub-btn-div sub-btn-div-hover-signout'
+                  onClick={logoutHandler}
+                >
                   <p className='btn-premium'>Signout</p>
                 </div>
               </div>
@@ -291,4 +312,6 @@ const mapStateToProps = state => ({
   user: state.auth.user
 });
 
-export default connect(mapStateToProps)(SettingComponent);
+export default withRouter(
+  connect(mapStateToProps, { deleteAccount, logout })(SettingComponent)
+);

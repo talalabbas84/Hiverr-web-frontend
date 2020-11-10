@@ -4,7 +4,8 @@ import {
   LOADING_START,
   LOADING_STOP,
   GET_ALL_USER_FAILURE,
-  GET_ALL_USER_SUCCESS
+  GET_ALL_USER_SUCCESS,
+  CLEAR_PROFILE
 } from '../actions/types';
 
 // import { useHistory } from 'react-router-dom';
@@ -42,6 +43,13 @@ export default function (state = initialState, action) {
         loading: false,
         users: [],
         error: payload
+      };
+    case CLEAR_PROFILE:
+      return {
+        ...state,
+        loading: false,
+        users: [],
+        error: ''
       };
     // case LOADING_START:
     //   return {

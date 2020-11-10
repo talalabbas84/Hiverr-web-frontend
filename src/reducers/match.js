@@ -1,4 +1,4 @@
-import { GET_MATCHES } from '../actions/types';
+import { GET_MATCHES, CLEAR_MATCH } from '../actions/types';
 
 const initialState = {
   matches: []
@@ -10,10 +10,15 @@ export default function (state = initialState, action) {
     case GET_MATCHES:
       return {
         ...state,
-        loading: false,
+
         matches: payload
       };
 
+    case CLEAR_MATCH:
+      return {
+        ...state,
+        matches: []
+      };
     default:
       return state;
   }

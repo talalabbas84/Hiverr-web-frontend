@@ -139,6 +139,10 @@
   color: white;
   border-radius: 5px;
 }
+
+.save-btn :hover {
+  cursor: pointer;
+}
 .div-info {
   display: flex;
   /* background-color: teal; */

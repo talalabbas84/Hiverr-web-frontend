@@ -21,7 +21,9 @@ export const matched = () => async dispatch => {
   }
 
   try {
-    const res = await axios.get('/api/v1/match/matched');
+    const res = await axios.get(
+      'https://hiverr-backend.herokuapp.com/api/v1/match/matched'
+    );
 
     dispatch({
       type: LOADING_STOP

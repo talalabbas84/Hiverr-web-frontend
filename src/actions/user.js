@@ -157,9 +157,13 @@ export const deletePictures = url => async dispatch => {
 };
 
 export const getUsers = () => async dispatch => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
   try {
     const res = await axios.get(
       'https://hiverr-backend.herokuapp.com/api/v1/user'
+      // '/api/v1/user'
     );
     console.log(res.data.data);
 
@@ -194,7 +198,7 @@ export const updateUsers = fieldsToUpdate => async dispatch => {
   try {
     const res = await axios.put(
       // 'https://hiverr-backend.herokuapp.com/api/v1/user',
-      '/api/v1/user/update-details',
+      'https://hiverr-backend.herokuapp.com/api/v1/user/update-details',
       body,
       config
     );
@@ -231,7 +235,49 @@ export const swipeRight = liked_to => async dispatch => {
     }
   };
   try {
-    const res = await axios.put('/api/v1/match/right', body, config);
+    const res = await axios.put(
+      'https://hiverr-backend.herokuapp.com/api/v1/match/right',
+      body,
+      config
+    );
+
+    dispatch({
+      type: LOADING_STOP
+    });
+    dispatch(loadUser());
+  } catch (err) {
+    dispatch({
+      type: LOADING_STOP
+    });
+    const errors = err.response.data.error.split(',') || ['Network Error!'];
+
+    if (errors) {
+      dispatch(setErrors(errors[0]));
+      // errors.forEach(error => dispatch(setAlert(error, 'danger')));
+    }
+  }
+};
+
+export const swipeLeft = liked_to => async dispatch => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
+
+  const body = JSON.stringify({
+    liked_to: liked_to
+  });
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  try {
+    const res = await axios.put(
+      'https://hiverr-backend.herokuapp.com/api/v1/match/left',
+      body,
+      config
+    );
 
     dispatch({
       type: LOADING_STOP

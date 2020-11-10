@@ -37,6 +37,13 @@
   padding: 2%;
 }
 
+.sub-btn-div-hover-signout :hover {
+  cursor: pointer;
+}
+.sub-btn-div-hover-delete :hover {
+  cursor: pointer;
+}
+
 .title-css {
   color: white;
 }

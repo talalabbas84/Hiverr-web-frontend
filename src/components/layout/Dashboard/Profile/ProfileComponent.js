@@ -307,7 +307,7 @@ const ProfileComponent = ({
               showArrow
               tagRender={tagRender}
               // defaultValue={['Music']}
-              onChange={e => setWhatMakesYouHappy(e)}
+              onChange={e => setWhatMakesYouHappy}
               defaultValue={user && user.user && user.user.interests}
               className='select-class'
               // style={{

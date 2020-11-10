@@ -24,7 +24,9 @@ import {
   GET_NOTIFICATION,
   LOADING_STOP,
   CLEAR_PROFILES,
-  RESET_PASSWORD_CODE_SUCCESS
+  RESET_PASSWORD_CODE_SUCCESS,
+  ACCOUNT_DELETED,
+  CLEAR_MATCH
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -150,12 +152,6 @@ export const login = (email, password) => async dispatch => {
       type: LOGIN_FAIL
     });
   }
-};
-
-// Logout / Clear Profile
-export const logout = () => dispatch => {
-  dispatch({ type: CLEAR_PROFILE });
-  dispatch({ type: LOGOUT });
 };
 
 export const emailVerification = (
@@ -469,6 +465,68 @@ export const validateForgotPassword = (
     // console.log(res.data, 'dasdsdadsadsa');
     // navigation.navigate('ForgetPasswordNext');
     history.push('/forget-password-verification');
+  } catch (err) {
+    dispatch({
+      type: LOADING_STOP
+    });
+    const errors = err.response.data.error.split(',') || ['Network Error!'];
+
+    if (errors) {
+      dispatch(setErrors(errors[0]));
+      // errors.forEach(error => dispatch(setAlert(error, 'danger')));
+    }
+  }
+};
+
+export const deleteAccount = () => async dispatch => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
+
+  try {
+    const res = await axios.post(
+      'https://hiverr-backend.herokuapp.com/api/v1/auth/delete-account'
+    );
+
+    dispatch({
+      type: LOADING_STOP
+    });
+    dispatch({
+      type: ACCOUNT_DELETED
+    });
+    dispatch({
+      type: CLEAR_MATCH
+    });
+    dispatch({
+      type: CLEAR_PROFILE
+    });
+  } catch (err) {
+    dispatch({
+      type: LOADING_STOP
+    });
+    const errors = err.response.data.error.split(',') || ['Network Error!'];
+
+    if (errors) {
+      dispatch(setErrors(errors[0]));
+      // errors.forEach(error => dispatch(setAlert(error, 'danger')));
+    }
+  }
+};
+
+export const logout = () => async dispatch => {
+  try {
+    dispatch({
+      type: LOADING_STOP
+    });
+    dispatch({
+      type: ACCOUNT_DELETED
+    });
+    dispatch({
+      type: CLEAR_MATCH
+    });
+    dispatch({
+      type: CLEAR_PROFILE
+    });
   } catch (err) {
     dispatch({
       type: LOADING_STOP
