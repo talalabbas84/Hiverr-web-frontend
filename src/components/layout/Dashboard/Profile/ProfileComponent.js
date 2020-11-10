@@ -130,7 +130,7 @@ const ProfileComponent = (props) => {
           <p className="text-heading">I'm here to</p>
           <p className="text-para">Have long term commitment</p>
           <Input
-            style={{ width: 405 }}
+            className="select-class"
             placeholder="Have long term commitment"
           />
         </div>
