@@ -12,6 +12,10 @@
   border-radius: 100px !important;
 }
 
+.card-div-cursor :hover {
+  cursor: pointer;
+}
+
 .image-sub-col {
   border-radius: 20px !important;
   height: 300px;

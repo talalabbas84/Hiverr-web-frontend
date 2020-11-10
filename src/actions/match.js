@@ -37,11 +37,11 @@ export const matched = () => async dispatch => {
     dispatch({
       type: LOADING_STOP
     });
-    const errors = err.response.data.error.split(',') || ['Network Error!'];
+    // const errors = err.response.data.error.split(',') || ['Network Error!'];
 
-    if (errors) {
-      dispatch(setErrors(errors[0]));
-      // errors.forEach(error => dispatch(setAlert(error, 'danger')));
-    }
+    // if (errors) {
+    //   dispatch(setErrors(errors[0]));
+    //   // errors.forEach(error => dispatch(setAlert(error, 'danger')));
+    // }
   }
 };
