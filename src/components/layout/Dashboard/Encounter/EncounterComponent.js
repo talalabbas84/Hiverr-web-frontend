@@ -46,7 +46,7 @@ const EncounterComponenet = ({
   // }
   return (
     <div className="div-swiper-content">
-      {user ? (
+      {user && user.user && user.user._id ? (
         <div className="div-swiper-content">
           <div className="div-carousel">
             <Carousel className="carousel-css">
@@ -85,7 +85,7 @@ const EncounterComponenet = ({
             // style={{ paddingTop: collapsed ? 150 : 10 }}
             className="div-right-side"
           >
-            <p style={{ color: "#fff", fontSize: 50 }}>
+            <p style={{ color: "#fff", fontSize: 50, marginTop: -80 }}>
               {users.length > 0 && users[count].name}
             </p>
             <p style={{ color: "#fff", fontSize: 18, marginTop: -60 }}>
