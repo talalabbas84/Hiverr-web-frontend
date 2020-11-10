@@ -32,4 +32,4 @@ const mapStateToProps = state => ({
   isVerified: state.auth.isVerified,
   loading: state.auth.loading
 });
-export default connect(mapStateToProps)(Encounter);
+export default connect(mapStateToProps, {})(Encounter);

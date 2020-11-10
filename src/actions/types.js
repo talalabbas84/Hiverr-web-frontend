@@ -48,3 +48,4 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const GET_ALL_USER_FAILURE = 'GET_ALL_USER_FAILURE';
 export const GET_ALL_USER_SUCCESS = 'GET_ALL_USER_SUCCESS';
+export const GET_MATCHES = 'GET_MATCHES';
