@@ -1,0 +1,96 @@
+.body{
+    display:flex;
+    background:#211C1E;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    
+    }
+    .body p1{
+    display: flex;
+    font-size: 34px;
+    
+    
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    
+    }
+    .body p2{
+        display: flex;
+        justify-content: center;
+    
+        color: #A5A5A5;
+        font-size: 20px;
+        
+    }
+
+    .uploadimage{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        
+      
+    }
+    .uploadimage2{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .body .avatar-uploader{
+    display: flex;
+    justify-content: center;
+    border-color:transparent;
+    background:transparent;
+    
+    }
+    .avatar-uploader > .ant-upload {
+        
+        display: flex;
+        justify-content: center;
+        /* border:1px solid; */
+        border: 0.5px solid #FFFFFF;
+        border-radius: 25px;
+        /* background:transparent; */
+    
+        width: 128px;
+        height: 128px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .btn-upload{
+          background:#6E48DB;
+          border:solid;
+          border-color: #6E48DB;
+          border-radius: 39px;
+          color: white;
+          width: 128px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          font-size: 22px;
+      }
+     
+      footer{
+    
+        width: 100%;
+        background-color: rgba(87, 87, 87, 1);
+        color:transparent;
+}
+@media screen and (max-width: 768px) {
+    .body p1{
+        font-size: 29px;
+    }
+    .body p2{
+        font-size: 22px;
+    }
+    .avatar-uploader > .ant-upload {
+        width: 90px;
+        height: 90px;
+    }
+}    

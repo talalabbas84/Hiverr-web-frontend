@@ -49,6 +49,9 @@
   object-fit: cover;
   margin-right: 7px;
 }
+.avatar-cursor :hover {
+  cursor: pointer !important;
+}
 .div-line {
   /* width: 170px; */
   height: 1px;
@@ -90,6 +93,7 @@
   flex-direction: row;
   align-items: center;
 }
+
 .div-swiper-content {
   display: flex;
   flex: 1;

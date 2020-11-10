@@ -27,6 +27,11 @@
   margin-bottom: 40px;
 }
 
+.resend-code-css {
+  color: beige;
+  font-size: 16px;
+}
+
 .btn-verify {
   background: #6e48db;
   border-radius: 39px;

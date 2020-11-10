@@ -1,5 +1,7 @@
-import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, Link, useHistory, useLocation } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import { Layout, Menu } from 'antd';
@@ -7,8 +9,20 @@ import CoinImg from '../../../asset/images/coin.png';
 import DiamondImg from '../../../asset/images/diamond.png';
 const { Sider } = Layout;
 
-const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
-  // const [collapsed, setcollapsed] = useState(true);
+const LeftSideBar = ({
+  collapsed,
+  setCollapsedHandler,
+  user,
+  isAuthenticated
+}) => {
+  // if (isAuthenticated) {
+  //   return <Redirect to='/login' />;
+  // }
+  console.log(user);
+  const history = useHistory();
+  const location = useLocation();
+  const { pathname } = location;
+  // const [collapsed, setcollapsed] = useState(false);
 
   const toggle = () => {
     // setcollapsed(!collapsed);
@@ -16,31 +30,45 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
     setCollapsedHandler(collapsed);
     // alert("This is collapse");
   };
+  const profileNavigatorHandler = () => {
+    history.push('/profile');
+  };
   const MenuItemHandler = () => {};
   return (
     <Sider
       style={{ backgroundColor: '#211C1E' }}
-      collapsible
+      collapsible={window.innerWidth > 768 ? false : true}
       collapsed={collapsed}
       onCollapse={toggle}
+      // style={{
+      //   overflow: 'auto',
+      //   height: '100vh',
+      //   position: 'fixed',
+      //   left: 0
+      // }}
     >
       <div className='logo' />
       <Menu
         style={{ backgroundColor: '#211C1E' }}
         theme='dark'
-        defaultSelectedKeys={['1']}
+        defaultSelectedKeys={['/encounter']}
         mode='inline'
+        selectedKeys={[pathname]}
       >
-        <div className='div-avatar'>
-          <img
-            src='https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/4/4f/Jessica_Jones_Season_2_Promotional.png/revision/latest?cb=20180626040112'
-            alt='Logo'
-            className='avatar'
-          />
+        <div className='div-avatar' onClick={profileNavigatorHandler}>
+          <div className='avatar-cursor'>
+            <img
+              src={user && user.user && user.user.otherphotos[0].url}
+              alt='Profile Pic'
+              className='avatar'
+            />
+          </div>
           {collapsed === false ? (
             <div>
               <Link to='/profile'>
-                <p style={{ color: '#fff', fontSize: 13 }}>Jessica jones</p>
+                <p style={{ color: '#fff', fontSize: 13 }}>
+                  {user && user.user && user.user.name}
+                </p>
               </Link>
               <div style={{ display: 'flex', flexDirection: 'row' }}>
                 <p style={{ color: '#fff', fontSize: 12 }}>Popularity: </p>
@@ -83,35 +111,72 @@ const LeftSideBar = ({ collapsed, setCollapsedHandler }) => {
             <button className='button-coin'>Activate</button>
           </div>
         </div>
-        <Menu.Item style={{ margin: 0 }} key='1'>
-          <NavLink to='encounter'>Encounters</NavLink>
+        <Menu.Item
+          style={{ margin: 0 }}
+          key='/encounter'
+          onClick={() => history.push('/encounter')}
+        >
+          {/* <NavLink to='encounter'>Encounters</NavLink> */}
+          Encounters
         </Menu.Item>
         <Menu.Item
           active
           style={{ margin: 0 }}
-          key='2'
-          onClick={MenuItemHandler}
+          key='/people-nearby'
+          active
+          onClick={() => history.push('/people-nearby')}
         >
-          <NavLink to='people-nearby'>People nearby</NavLink>
+          {/* <NavLink to='people-nearby'>People nearby</NavLink> */}
+          People Nearby
         </Menu.Item>
-        <Menu.Item style={{ margin: 0 }} key='3'>
-          <NavLink to='/messages'>Messages</NavLink>
+        <Menu.Item
+          style={{ margin: 0 }}
+          key='/messages'
+          onClick={() => history.push('/messages')}
+        >
+          {/* <NavLink to='/messages'>Messages</NavLink> */}
+          Messages
         </Menu.Item>
-        <Menu.Item style={{ margin: 0 }} key='4'>
-          <NavLink to='/matched'>Matched</NavLink>
+        <Menu.Item
+          style={{ margin: 0 }}
+          key='/matched'
+          onClick={() => history.push('/matched')}
+        >
+          {/* <NavLink to='/matched'>Matched</NavLink> */}
+          Matched
         </Menu.Item>
-        <Menu.Item style={{ margin: 0 }} key='5'>
-          <NavLink to='/liked-you'>Liked You</NavLink>
+        <Menu.Item
+          style={{ margin: 0 }}
+          key='/liked-you'
+          onClick={() => history.push('/liked-you')}
+        >
+          {/* <NavLink to='/liked-you'>Liked You</NavLink> */}
+          Liked You
         </Menu.Item>
-        <Menu.Item style={{ margin: 0 }} key='6'>
-          <NavLink to='/visitors'>Visitors</NavLink>
+        <Menu.Item
+          style={{ margin: 0 }}
+          key='/visitors'
+          onClick={() => history.push('/visitors')}
+        >
+          {/* <NavLink to='/visitors'>Visitors</NavLink> */}
+          Visitors
         </Menu.Item>
-        <Menu.Item style={{ margin: 0 }} key='7'>
-          <NavLink to='/favourites'>Favourites</NavLink>
+        <Menu.Item
+          style={{ margin: 0 }}
+          key='/favourites'
+          onClick={() => history.push('/favourites')}
+        >
+          {/* <NavLink to='/favourites'>Favourites</NavLink> */}
+          Favourites
         </Menu.Item>
       </Menu>
     </Sider>
   );
 };
 
-export default LeftSideBar;
+const mapStateToProps = state => ({
+  user: state.auth.user,
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(LeftSideBar);

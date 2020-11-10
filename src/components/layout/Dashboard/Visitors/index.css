@@ -24,14 +24,16 @@
   height: 300px;
 }
 
-.mask-css {
+.mask-css-1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 5%;
+  /* background-color: lawngreen !important;
+  background: lightcoral !important; */
 }
 
-.para-css {
+.para-css-1 {
   /* font-weight: ; */
   margin-bottom: -2px;
 }

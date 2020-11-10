@@ -36,6 +36,27 @@
   margin-top: 20px;
 }
 
+.dropdown-group-css {
+  /* background-color: aqua; */
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+.selected-value-dropdown {
+  color: white !important;
+  background: #616161 !important;
+}
+
+.dropdown-content li:hover,
+.dropdown-content li.active {
+  background-color: cyan;
+}
+
+.error-signup-style {
+  color: red;
+  margin-bottom: -5%;
+  max-width: 300px;
+}
 @media screen and (max-width: 768px) {
   .heading {
     color: white;
