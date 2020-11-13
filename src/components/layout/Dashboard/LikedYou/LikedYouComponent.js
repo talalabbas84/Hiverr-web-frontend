@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './index.css';
+import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import { MDBContainer, MDBRow } from 'mdbreact';
 
-const LikedYouComponent = () => {
+import { getLikes } from '../../../../actions/user';
+
+const LikedYouComponent = ({ getLikes, likes }) => {
+  useEffect(() => {
+    getLikes();
+  }, []);
   return (
     <MDBContainer className='div-main-cont'>
       <h1 className='heading-css'>Liked You</h1>
       <MDBRow>
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
+        {likes &&
+          likes.length > 0 &&
+          likes.map(people => <ImageCard likes={people} />)}
       </MDBRow>
     </MDBContainer>
   );
 };
-export default LikedYouComponent;
+
+const mapStateToProps = state => ({
+  likes: state.user.likes
+});
+export default connect(mapStateToProps, { getLikes })(LikedYouComponent);

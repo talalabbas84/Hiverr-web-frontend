@@ -5,7 +5,12 @@ import {
   LOADING_STOP,
   GET_ALL_USER_FAILURE,
   GET_ALL_USER_SUCCESS,
-  CLEAR_PROFILE
+  CLEAR_PROFILE,
+  GET_ACCOUNT,
+  CLEAR_USER,
+  GET_PEOPLE_NEARBY,
+  GET_LIKES,
+  GET_VIEWS
 } from '../actions/types';
 
 // import { useHistory } from 'react-router-dom';
@@ -13,7 +18,11 @@ import {
 const initialState = {
   loading: false,
   users: [],
-  error: ''
+  error: '',
+  profile: {},
+  peopleNearby: [],
+  likes: [],
+  views: []
 };
 
 export default function (state = initialState, action) {
@@ -25,6 +34,24 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false
+      };
+    case GET_VIEWS:
+      return {
+        ...state,
+        loading: false,
+        views: payload
+      };
+    case GET_LIKES:
+      return {
+        ...state,
+        loading: false,
+        likes: payload
+      };
+    case GET_PEOPLE_NEARBY:
+      return {
+        ...state,
+        loading: false,
+        peopleNearby: payload
       };
     case PROFILE_PICTURE_FAIL:
       return {
@@ -43,6 +70,18 @@ export default function (state = initialState, action) {
         loading: false,
         users: [],
         error: payload
+      };
+    case CLEAR_USER:
+      return {
+        ...state,
+        loading: false,
+        user: {}
+      };
+    case GET_ACCOUNT:
+      return {
+        ...state,
+        loading: false,
+        profile: payload
       };
     case CLEAR_PROFILE:
       return {

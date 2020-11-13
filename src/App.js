@@ -11,8 +11,7 @@ import Landing from './components/layout/Landing/Landing';
 import SignIn from './components/layout/SignIn/SignIn';
 
 import { Navbar } from './components/layout/Navbar';
-// import Encounter from './components/layout/Encounter';
-// import Dashboard from './components/layout/Dashboard/Dashboard';
+
 import ForgetPassword from './components/layout/Dashboard/ForgetPassword/ForgetPassword';
 import Encounter from './components/layout/Dashboard/Encounter/Encounter';
 import SignUp from './components/layout/SignUp/SignUp';
@@ -26,6 +25,7 @@ import Favourities from './components/layout/Dashboard/Favourities/Favourities';
 import SinglePhotoUpload from './components/layout/PhotoUpload/SinglePhotoUpload/SinglePhotoUpload.js';
 import { MultiPhotoUpload } from './components/layout/PhotoUpload/MultiPhotoUpload/MultiPhotoUpload';
 import EmailVerification from './components/layout/Verification/EmailVerification/EmailVerification';
+
 import Setting from './components/layout/Dashboard/Setting/Setting';
 import Profile from './components/layout/Dashboard/Profile/Profile';
 import { loadUser } from './actions/auth';

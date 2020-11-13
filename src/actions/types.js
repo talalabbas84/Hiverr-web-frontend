@@ -52,3 +52,13 @@ export const GET_MATCHES = 'GET_MATCHES';
 export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 
 export const CLEAR_MATCH = 'CLEAR_MATCH';
+
+export const CLEAR_USER = 'CLEAR_USER';
+
+export const GET_ACCOUNT = 'GET_ACCOUNT';
+
+export const GET_PEOPLE_NEARBY = 'GET_PEOPLE_NEARBY';
+
+export const GET_LIKES = 'GET_LIKES';
+
+export const GET_VIEWS = 'GET_VIEWS';

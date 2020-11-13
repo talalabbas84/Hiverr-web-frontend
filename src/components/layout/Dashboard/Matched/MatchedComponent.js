@@ -18,7 +18,7 @@ const MatchedComponent = ({ matched, matches }) => {
         {matches &&
           matches.matches &&
           matches.matches.length > 0 &&
-          matches.matches.map(match => <ImageCard match={match} />)}
+          matches.matches.map(match => <ImageCard matched={match} />)}
       </MDBRow>
     </MDBContainer>
   );

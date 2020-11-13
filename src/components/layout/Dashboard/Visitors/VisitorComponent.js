@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './index.css';
+import { connect } from 'react-redux';
 import ImageCard from './ImageCard';
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 
-const VisitorComponent = () => {
+import { getViews } from '../../../../actions/user';
+
+const VisitorComponent = ({ views, getViews }) => {
+  console.log(views, 'viewssssssssss');
+
+  useEffect(() => {
+    getViews();
+  }, []);
   return (
     <MDBContainer className='div-main-cont'>
       <h1 className='heading-css'>Visitors</h1>
       <MDBRow>
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
+        {views &&
+          views.length > 0 &&
+          views.map(people => <ImageCard views={people} />)}
       </MDBRow>
     </MDBContainer>
   );
 };
-export default VisitorComponent;
+const mapStateToProps = state => ({
+  views: state.user.views
+});
+
+export default connect(mapStateToProps, { getViews })(VisitorComponent);

@@ -4,24 +4,33 @@ import { withRouter } from 'react-router-dom';
 import './index.css';
 import { MDBMask, MDBView, MDBCol } from 'mdbreact';
 
-const ImageCard = ({ match, user, history }) => {
-  console.log(match, 'matcg in componenet');
+const ImageCard = ({ matched, user, history }) => {
   let account;
   // if(user)
-  console.log(user);
 
-  const CardClickHandler = () => {};
   if (
     user &&
     user.user &&
-    match &&
-    match.person_1 &&
-    user.user._id.toString() == match.person_1._id.toString()
+    matched &&
+    matched.person_1 &&
+    user.user._id.toString() == matched.person_1._id.toString()
   ) {
-    account = match.person_2;
-  } else {
-    account = match.person_1;
+    account = matched.person_2;
+  } else if (
+    user &&
+    user.user &&
+    matched &&
+    matched.person_1 &&
+    user.user._id.toString() == matched.person_2._id.toString()
+  ) {
+    account = matched.person_1;
   }
+  const CardClickHandler = () => {
+    console.log(account._id);
+    history.push(`/viewprofile/${account._id}`);
+  };
+
+  console.log(account);
   const getAge = dateString => {
     const today = new Date();
     const birthDate = new Date(dateString);
@@ -35,27 +44,29 @@ const ImageCard = ({ match, user, history }) => {
   console.log(account, 'account');
   return (
     // <div onClick={CardClickHandler}>
-    <MDBCol md='4' className='image-main-col'>
-      <MDBView className='image-sub-col'>
-        <div className='card-div-cursor' onClick={CardClickHandler}>
-          <img
-            style={{ objectFit: 'cover', width: '300px', height: '300px' }}
-            src={account && account.otherphotos[0].url}
-            className='img-fluid'
-            alt=''
-          />
-          <MDBMask className='mask-css' overlay='teal-slight'>
-            <p className='white-text para-css-1 '>
-              {account && account.name}, {getAge(account && account.dob)}
-            </p>
+    matched && user && user.user ? (
+      <MDBCol md='4' className='image-main-col'>
+        <MDBView className='image-sub-col'>
+          <div className='card-div-cursor' onClick={CardClickHandler}>
+            <img
+              style={{ objectFit: 'cover', width: '300px', height: '300px' }}
+              src={account && account.otherphotos[0].url}
+              className='img-fluid'
+              alt=''
+            />
+            <MDBMask className='mask-css' overlay='teal-slight'>
+              <p className='white-text para-css-1 '>
+                {account && account.name}, {getAge(account && account.dob)}
+              </p>
 
-            {/* <p className='white-text para-css-1'>Ontario</p>
+              {/* <p className='white-text para-css-1'>Ontario</p>
 
           <p className='white-text para-css-1'>2.3 km away</p> */}
-          </MDBMask>
-        </div>
-      </MDBView>
-    </MDBCol>
+            </MDBMask>
+          </div>
+        </MDBView>
+      </MDBCol>
+    ) : null
     // </div>
   );
 };
