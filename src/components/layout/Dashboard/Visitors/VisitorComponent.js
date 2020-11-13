@@ -18,7 +18,9 @@ const VisitorComponent = ({ views, getViews }) => {
       <MDBRow>
         {views &&
           views.length > 0 &&
-          views.map(people => <ImageCard views={people} />)}
+          views[0].views &&
+          views[0].views.length > 0 &&
+          views[0].views.map(people => <ImageCard views={people} />)}
       </MDBRow>
     </MDBContainer>
   );

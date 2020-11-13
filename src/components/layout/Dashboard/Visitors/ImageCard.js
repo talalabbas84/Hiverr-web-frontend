@@ -5,6 +5,7 @@ import './index.css';
 import { MDBMask, MDBView, MDBCol } from 'mdbreact';
 
 const ImageCard = ({ views, user, history }) => {
+  console.log(views, 'viewss in compo');
   const CardClickHandler = () => {
     history.push(`/viewprofile/${views._id}`);
   };
@@ -20,13 +21,20 @@ const ImageCard = ({ views, user, history }) => {
     return age;
   };
 
-  return views && views.length > 0 && user && user.user ? (
+  return views && user && user.user ? (
     <MDBCol md='4' className='image-main-col'>
       <MDBView className='image-sub-col'>
         <div className='card-div-cursor' onClick={CardClickHandler}>
           <img
             style={{ objectFit: 'cover', width: '300px', height: '300px' }}
-            src={views.otherPhotos[0].url}
+            src={
+              views &&
+              views.otherphotos.length > 0 &&
+              views.otherphotos[0] &&
+              views.otherphotos[0].url
+                ? views.otherphotos[0].url
+                : 'https://professorly.herokuapp.com/uploads/no-photo.jpg'
+            }
             className='img-fluid'
             alt=''
           />
