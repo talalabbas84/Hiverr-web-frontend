@@ -7,6 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import CrossIcon from "@material-ui/icons/Clear";
 import CheckIcon from "@material-ui/icons/Check";
+import { Slider, Checkbox } from "antd";
 
 import { getUsers, swipeRight, swipeLeft } from "../../../../actions/user";
 
@@ -52,6 +53,7 @@ const EncounterComponenet = ({
 
   // }
   return (
+    // <div style={{ display: 'flex', flexDirection: 'row' }}>
     <div className="div-swiper-content">
       {users && users.length > 0 && count < users.length ? (
         <div className="div-swiper-content">
@@ -165,6 +167,30 @@ const EncounterComponenet = ({
                   Drinking: {users[count].drinking}
                 </p>
               )}
+            {/* Slider here */}
+            {/* <p style={{ color: "#fff", fontSize: 18, marginTop: -20 }}>
+                Age limit
+              </p>
+              <Slider
+                range
+                defaultValue={[20, 50]}
+                disabled={false}
+                style={{ marginTop: -10 }}
+              /> */}
+            {/* <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  marginTop: 10,
+                }}
+              >
+                <p style={{ color: "#fff", fontSize: 18, marginBottom: 5 }}>
+                  Gender
+                </p>
+                <Checkbox style={{ margin: 0, color: "#fff" }}>Male</Checkbox>
+                <Checkbox style={{ margin: 0, color: "#fff" }}>Female</Checkbox>
+                <Checkbox style={{ margin: 0, color: "#fff" }}>All</Checkbox>
+              </div> */}
           </div>
         </div>
       ) : (
@@ -191,6 +217,8 @@ const EncounterComponenet = ({
         </div>
       )}
     </div>
+
+    // </div>
   );
 };
 const mapStateToProps = (state) => ({
