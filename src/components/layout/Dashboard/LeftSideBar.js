@@ -58,7 +58,14 @@ const LeftSideBar = ({
         <div className='div-avatar' onClick={profileNavigatorHandler}>
           <div className='avatar-cursor'>
             <img
-              src={user && user.user && user.user.otherphotos[0].url}
+              src={
+                user &&
+                user.user &&
+                user.user.otherphotos[0] &&
+                user.user.otherphotos[0].url
+                  ? user.user.otherphotos[0].url
+                  : 'https://professorly.herokuapp.com/uploads/no-photo.jpg'
+              }
               alt='Profile Pic'
               className='avatar'
             />
