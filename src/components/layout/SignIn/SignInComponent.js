@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link, Redirect, withRouter } from 'react-router-dom';
-import { Paper, Grid, LinearProgress } from '@material-ui/core';
-import { MDBBtn, MDBIcon } from 'mdbreact';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { login } from '../../../actions/auth';
-import Alert from '../Alert';
+import React, { Fragment, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Link, Redirect, withRouter } from "react-router-dom";
+import { Paper, Grid, LinearProgress } from "@material-ui/core";
+import { MDBBtn, MDBIcon } from "mdbreact";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { login } from "../../../actions/auth";
+import Alert from "../Alert";
 
 // const useStyles = makeStyles(theme => ({
 //   root: {
@@ -20,143 +20,143 @@ import Alert from '../Alert';
 const SignInComponent = ({ login, isAuthenticated, history }) => {
   // const classes = useStyles();
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     login(email, password);
   };
 
   const forgotYourPasswordHandler = () => {
-    history.push('/forget-password');
+    history.push("/forget-password");
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/encounter' />;
+    return <Redirect to="/encounter" />;
   }
   return (
     <Fragment>
       {/* <LinearProgress variant='determinate' value={progress} /> */}
-      <Grid className='main-container' container>
+      <Grid className="main-container" container>
         <Grid
-          alignItems='center'
+          alignItems="center"
           container
-          direction='row'
-          justify='center'
+          direction="row"
+          justify="center"
           item
           xs={12}
           lg={12}
           md={12}
           sm={12}
         >
-          <h1 className='heading'>Sign In to Hivrr</h1>
+          <h1 className="heading">Sign In to Hivrr</h1>
         </Grid>
         <Grid
           item
-          alignItems='center'
+          alignItems="center"
           container
-          direction='row'
-          justify='center'
+          direction="row"
+          justify="center"
           xs={12}
           lg={12}
           md={12}
           sm={12}
         >
-          <p className='para para-media'>
+          <p className="para para-media">
             Please enter your sign details. Signup here if you are not
             registered yet.
           </p>
         </Grid>
         <Grid
           container
-          direction='row'
-          justify='center'
+          direction="row"
+          justify="center"
           xs={12}
           lg={12}
           md={12}
           sm={12}
         >
-          <div className='form-group form-css'>
-            <div className='margin-css'>
-              <label className='para' htmlFor='formGroupExampleInput'>
+          <div className="form-group form-css">
+            <div className="margin-css">
+              <label className="para" htmlFor="formGroupExampleInput">
                 Email
               </label>
               <input
-                type='text'
+                type="text"
                 value={email}
                 required
-                onChange={e => onChange(e)}
-                className='form-control form-control-md'
-                id='formGroupExampleInput'
+                onChange={(e) => onChange(e)}
+                className="form-control form-control-md"
+                id="formGroupExampleInput"
                 style={{ width: 350 }}
-                name='email'
-                size='lg'
+                name="email"
+                size="lg"
               />
             </div>
-            <div className='margin-css'>
-              <label className='para' htmlFor='formGroupExampleInput'>
+            <div className="margin-css">
+              <label className="para" htmlFor="formGroupExampleInput">
                 Password
               </label>
               <input
-                type='password'
-                className='form-control form-control-md'
-                id='formGroupExampleInput'
+                type="password"
+                className="form-control form-control-md"
+                id="formGroupExampleInput"
                 value={password}
-                name='password'
-                onChange={e => onChange(e)}
+                name="password"
+                onChange={(e) => onChange(e)}
               />
             </div>
 
             <div>
-              <div class='custom-control custom-checkbox checkbox-css'>
+              <div class="custom-control custom-checkbox checkbox-css">
                 <input
-                  type='checkbox'
-                  className='custom-control-input'
-                  id='defaultUnchecked'
+                  type="checkbox"
+                  className="custom-control-input"
+                  id="defaultUnchecked"
                 />
                 <label
-                  className='custom-control-label para'
-                  for='defaultUnchecked'
+                  className="custom-control-label para"
+                  for="defaultUnchecked"
                 >
                   Remember me?
                 </label>
               </div>
             </div>
-            <div className='margin-css-4'>
+            <div className="margin-css-4">
               <Alert />
             </div>
-            <div className='btn-sign-in'>
+            <div className="btn-sign-in">
               {/* <Link to='/encounter'> */}
-              <MDBBtn className='mr-2' rounded onClick={e => onSubmit(e)}>
+              <MDBBtn className="mr-2" rounded onClick={(e) => onSubmit(e)}>
                 Sign me in!
               </MDBBtn>
               {/* </Link> */}
             </div>
-            <div className='btn-sign-in'>
+            <div className="btn-sign-in">
               <label
-                className='underlined-para'
-                htmlFor='formGroupExampleInput'
+                className="underlined-para"
+                htmlFor="formGroupExampleInput"
                 onClick={forgotYourPasswordHandler}
               >
                 Forgot your password?
               </label>
             </div>
-            <div className='fb-btn'>
+            <div className="fb-btn">
               {/* <label
                 className='underlined-para-theme'
                 htmlFor='formGroupExampleInput'
               >
                 SignIn With Facebook
               </label> */}
-              <MDBBtn social='fb' className='mr-2 '>
-                <MDBIcon fab icon='facebook-f' className='mr-1' /> Login via
+              <MDBBtn social="fb" className="mr-2 ">
+                <MDBIcon fab icon="facebook-f" className="mr-1" /> Login via
                 Facebook
               </MDBBtn>
             </div>
@@ -169,11 +169,11 @@ const SignInComponent = ({ login, isAuthenticated, history }) => {
 
 SignInComponent.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
 };
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default withRouter(connect(mapStateToProps, { login })(SignInComponent));
